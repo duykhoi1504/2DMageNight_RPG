@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
          playerGun = GameObject.FindObjectOfType<PlayerController>().gameObject;
+        
     }
 
     // Update is called once per frame

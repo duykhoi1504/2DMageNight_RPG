@@ -7,8 +7,8 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Transform _playerTransform;
     [SerializeField] float _speed = 3;
-    [SerializeField] Vector3 _maxPos;
-    [SerializeField] Vector3 _minPos;
+     public Vector2 _maxPos;
+     public Vector2 _minPos;
 
     void Start()
     {

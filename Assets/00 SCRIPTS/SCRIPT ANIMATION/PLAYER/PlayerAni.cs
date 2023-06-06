@@ -19,8 +19,12 @@ public class PlayerAni : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            StartCoroutine(AttackCo());
+        }
         updateAni();
-
+        
     }
     void updateAni()
     {
@@ -36,5 +40,14 @@ public class PlayerAni : MonoBehaviour
         }
         else
             ani.SetBool("Moving", false);
+        
+    }
+    private IEnumerator AttackCo()
+    {
+        ani.SetBool("Attacking", true);
+        yield return null;
+        ani.SetBool("Attacking", false);
+        yield return new WaitForSeconds(.33f);
+
     }
 }

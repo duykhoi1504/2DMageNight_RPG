@@ -33,5 +33,6 @@ public class GameManager : MonoBehaviour
             timeCount = 0;
 
         }
+       
     }
 }
