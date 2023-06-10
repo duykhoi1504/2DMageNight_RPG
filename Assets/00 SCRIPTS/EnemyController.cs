@@ -5,16 +5,28 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject playerGun;
+    [SerializeField] GameObject player;
+    Rigidbody2D rigi;
+    [SerializeField] float speed=0.2f;
+    float distance;
     void Start()
     {
-         playerGun = GameObject.FindObjectOfType<PlayerController>().gameObject;
+         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
+        rigi = this.GetComponent<Rigidbody2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 dir=this.transform.position- playerGun.transform.position;
+        Vector3 dir = player.transform.position - this.transform.position;
+        Debug.DrawRay(this.transform.position, dir, Color.red);
+        distance = Vector3.Distance(this.transform.position, player.transform.position);
+        Debug.Log(distance);
+        if (distance < 3)
+            this.transform.position = Vector3.Lerp(this.transform.position, player.transform.position, speed * Time.deltaTime);
+
+
+
     }
 }

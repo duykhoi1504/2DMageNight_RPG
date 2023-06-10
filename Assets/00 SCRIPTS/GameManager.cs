@@ -22,14 +22,11 @@ public class GameManager : MonoBehaviour
 
         if (timeCount >= 5)
         {
-
             Vector2 ranPos = new Vector2(
                 Random.Range(-10, 10),
                 Random.Range(-10, 10)
                 );
-
             Instantiate(enemyPrefab, ranPos, Quaternion.identity);
-
             timeCount = 0;
 
         }

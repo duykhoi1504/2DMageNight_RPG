@@ -31,7 +31,7 @@ public class RoomMove : MonoBehaviour
             //cam._minPos += cameraChange;
             //cam._maxPos += cameraChange;
             //other.transform.position += playerChange;
-            
+
             isNeedText = true;
             if (isNeedText)
             {
