@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public enum Player_State
+{
+    Walk,
+    Attack,
+}
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] float speed = 4f;
     Rigidbody2D rigi;
     Vector3 movement=Vector3.zero;
-    
+    public Player_State PlayerState;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +26,10 @@ public class PlayerController : MonoBehaviour
         rigi.velocity = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")) * speed;
-
+        if (rigi.velocity.x > 0)
+        {
+            PlayerState = Player_State.Walk;
+        }
         
     }
 }

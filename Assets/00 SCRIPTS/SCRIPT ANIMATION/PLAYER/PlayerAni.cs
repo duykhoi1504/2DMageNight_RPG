@@ -21,6 +21,7 @@ public class PlayerAni : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.J))
         {
+            PlayerController.Instant.PlayerState = Player_State.Attack;
             StartCoroutine(AttackCo());
         }
         updateAni();
