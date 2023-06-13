@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6591500182988915304}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.921756, y: 3.0360656, z: 4.466699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -26.705463, y: 6.171127}
+  m_Offset: {x: -28.32309, y: 6.328944}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3395538, y: 0.15885448}
+  m_Size: {x: 0.10430145, y: 2.1473498}
   m_EdgeRadius: 0
 --- !u!114 &6591500182988915311
 MonoBehaviour:
@@ -71,10 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a46efaa9b26494cbb66ff0b6f2d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraChange: {x: 18.4, y: 0}
+  cameraChange: {x: 18.7, y: 0}
   playerChange: {x: 2, y: 0, z: 0}
   cam: {fileID: 0}
   isNeedText: 1
-  placeName: home
+  placeName: GoblinTown
   text: {fileID: 0}
   placeText: {fileID: 0}

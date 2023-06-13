@@ -11,7 +11,7 @@ public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] float speed = 4f;
     Rigidbody2D rigi;
-    Vector3 movement=Vector3.zero;
+    Vector3 movement;
     public Player_State PlayerState;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,8 @@ public class PlayerController : Singleton<PlayerController>
         rigi.velocity = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")) * speed;
-        if (rigi.velocity.x > 0)
+        movement = rigi.velocity;
+        if (movement!=Vector3.zero)
         {
             PlayerState = Player_State.Walk;
         }

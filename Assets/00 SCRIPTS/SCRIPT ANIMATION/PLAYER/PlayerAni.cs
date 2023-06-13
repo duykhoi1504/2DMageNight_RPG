@@ -7,6 +7,8 @@ public class PlayerAni : MonoBehaviour
     // Start is called before the first frame update
     private Vector3 change;
     Animator ani;
+
+
     void Start()
     {
         ani=this.GetComponent<Animator>();
@@ -24,8 +26,10 @@ public class PlayerAni : MonoBehaviour
             PlayerController.Instant.PlayerState = Player_State.Attack;
             StartCoroutine(AttackCo());
         }
-        updateAni();
-        scaleAniToMouse();
+           
+          //if (PlayerController.Instant.PlayerState ==Player_State.Walk)
+                updateAni();
+            scaleAniToMouse();
 
 
     }
