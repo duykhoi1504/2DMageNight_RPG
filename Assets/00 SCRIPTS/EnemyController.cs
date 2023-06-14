@@ -8,6 +8,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
     [SerializeField] float speed=0.2f;
+    [SerializeField] float chaseRadius;
+    [SerializeField] float attackRadius;
+
     float distance;
     void Start()
     {
@@ -22,8 +25,8 @@ public class EnemyController : MonoBehaviour
         Vector3 dir = player.transform.position - this.transform.position;
         Debug.DrawRay(this.transform.position, dir, Color.red);
         distance = Vector3.Distance(this.transform.position, player.transform.position);
-        Debug.Log(distance);
-        if (distance < 3)
+       
+        if (distance <= chaseRadius && distance> attackRadius)
             this.transform.position = Vector3.Lerp(this.transform.position, player.transform.position, speed * Time.deltaTime);
 
 
