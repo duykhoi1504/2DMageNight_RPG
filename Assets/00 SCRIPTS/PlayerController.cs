@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum Player_State
 {
+    Idle,
     Walk,
     Attack,
 }
