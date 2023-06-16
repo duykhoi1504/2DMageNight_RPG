@@ -4,17 +4,9 @@ using UnityEngine;
 
 public abstract class AniBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-  
+    //public abstract void ChangeAni(EnemyController.Enemy_State state)
+    //{
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //}
+   
 }

@@ -13,7 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] float speed = 4f;
     Rigidbody2D rigi;
     Vector3 movement;
-    public Player_State PlayerState;
+   public Player_State PlayerState;
     // Start is called before the first frame update
     void Start()
     {

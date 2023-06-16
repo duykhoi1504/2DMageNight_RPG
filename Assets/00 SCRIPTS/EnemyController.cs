@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Enemy_State EnemyState;
-    EnemyAni EnemyAnimation;
+    AniBase Animator;
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
     [SerializeField] float speed=0.2f;
@@ -25,15 +25,20 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
          player = GameObject.FindObjectOfType<PlayerController>().gameObject;
-        rigi = this.GetComponent<Rigidbody2D>();
-        EnemyAnimation = GetComponentInChildren<EnemyAni>();
+            rigi = this.GetComponent<Rigidbody2D>();
+            Animator = this.GetComponentInChildren<AniBase>();
     }
 
     // Update is called once per frame
     void Update()
-    {      
+    {
+
         CheckDistance();
        
+    }
+    public Enemy_State getState(Enemy_State state)
+    {
+        return state= EnemyState;
     }
     private void CheckDistance()
     {
