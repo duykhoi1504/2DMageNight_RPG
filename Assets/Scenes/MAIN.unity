@@ -402,8 +402,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 5a1b91a2bfc25d04b8ea3055e4f32a05, type: 2}
     - target: {fileID: 1191297879, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
-      propertyPath: m_WasSpriteAssigned
+      propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191297879, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191297879, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191297879, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3453938471324664758, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
       propertyPath: m_Name
@@ -729,8 +741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 6
-  knockTime: 0.4
+  thrust: 2
+  knockTime: 0.2
 --- !u!4 &1272247321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 641597755643185603, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
@@ -888,6 +900,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6591500182988915310, guid: 916f236754f25d84faebf30a6a5e6d46, type: 3}
   m_PrefabInstance: {fileID: 6591500183474559466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1689206536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1191297876, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
+  m_PrefabInstance: {fileID: 605040929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1689206540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689206536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f12a6d8df919cb4399171f702a780f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyState: 0
 --- !u!212 &1751118817 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 641597754357302924, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}

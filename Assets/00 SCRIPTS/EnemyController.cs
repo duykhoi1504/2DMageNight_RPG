@@ -7,13 +7,14 @@ public enum Enemy_State
     Idle,
     Attack,
     Walk,
-    beaten,
     stagger,
+    Dead,
 }
 public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Enemy_State EnemyState;
+    [SerializeField] Enemy_State EnemyState;
+    EnemyAni EnemyAnimation;
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
     [SerializeField] float speed=0.2f;
@@ -25,12 +26,14 @@ public class EnemyController : MonoBehaviour
     {
          player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         rigi = this.GetComponent<Rigidbody2D>();
+        EnemyAnimation = GetComponentInChildren<EnemyAni>();
     }
 
     // Update is called once per frame
     void Update()
     {      
         CheckDistance();
+       
     }
     private void CheckDistance()
     {
@@ -45,7 +48,6 @@ public class EnemyController : MonoBehaviour
         else
         {
             EnemyState = Enemy_State.Idle;
-
         }
     }
 }

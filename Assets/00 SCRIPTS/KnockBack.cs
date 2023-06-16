@@ -24,20 +24,25 @@ public class KnockBack : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Rigidbody2D rigi=other.GetComponent<Rigidbody2D>();
+            
             if(rigi!=null)
             {
                 //rigi.isKinematic = false;
                 Vector2 dir = (other.transform.position - this.transform.position).normalized* thrust;
                 rigi.AddForce(dir,ForceMode2D.Impulse);
-                StartCoroutine(KnockCo(rigi));
+                other.gameObject.GetComponentInChildren<SpriteRenderer>().color= Color.red;
+                StartCoroutine(KnockCo(rigi, other.gameObject));
+
             }
         }
     }
-    IEnumerator KnockCo(Rigidbody2D enemy)
+    IEnumerator KnockCo(Rigidbody2D enemy,GameObject other)
     {
         if(enemy!=null)
         {
             yield return new WaitForSeconds(knockTime);
+            other.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
             enemy.velocity= Vector2.zero;
             //enemy.isKinematic=true;
         }
