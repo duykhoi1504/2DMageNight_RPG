@@ -7,7 +7,7 @@ public class KnockBack : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
-
+    [SerializeField] Enemy_State currentState;
     void Start()
     {
         
@@ -23,14 +23,16 @@ public class KnockBack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            other.gameObject.GetComponentInParent<EnemyController>().setState(Enemy_State.Stagger);
             Rigidbody2D rigi=other.GetComponent<Rigidbody2D>();
             
-            if(rigi!=null)
+            if (rigi!=null)
             {
                 //rigi.isKinematic = false;
                 Vector2 dir = (other.transform.position - this.transform.position).normalized* thrust;
                 rigi.AddForce(dir,ForceMode2D.Impulse);
                 other.gameObject.GetComponentInChildren<SpriteRenderer>().color= Color.red;
+         
                 StartCoroutine(KnockCo(rigi, other.gameObject));
 
             }
@@ -40,9 +42,11 @@ public class KnockBack : MonoBehaviour
     {
         if(enemy!=null)
         {
+            
+
             yield return new WaitForSeconds(knockTime);
             other.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-
+         
             enemy.velocity= Vector2.zero;
             //enemy.isKinematic=true;
         }

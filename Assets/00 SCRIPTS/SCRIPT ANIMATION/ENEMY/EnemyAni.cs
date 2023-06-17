@@ -19,8 +19,8 @@ public class EnemyAni :MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-        currentState= enemy.getState(currentState);
+        
+        currentState = enemy.getState();
         ani.SetTrigger(currentState.ToString());    
     }
     

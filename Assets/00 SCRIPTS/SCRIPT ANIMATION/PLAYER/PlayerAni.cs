@@ -21,11 +21,11 @@ public class PlayerAni : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            PlayerController.Instant.PlayerState = Player_State.Attack;
-            StartCoroutine(AttackCo());
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    PlayerController.Instant.PlayerState = Player_State.Attack;
+        //    StartCoroutine(AttackCo());
+        //}
            
           //if (PlayerController.Instant.PlayerState ==Player_State.Walk)
                 updateAni();

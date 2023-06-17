@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1191297877}
   - component: {fileID: 1191297879}
   - component: {fileID: 1191297878}
+  - component: {fileID: 1689206540}
   m_Layer: 0
   m_Name: AniEnemy
   m_TagString: Untagged
@@ -95,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 1191297876}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f2ee9cb44e592448892cc474600ed30, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5a1b91a2bfc25d04b8ea3055e4f32a05, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -105,6 +106,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1689206540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191297876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f12a6d8df919cb4399171f702a780f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  currentState: 0
 --- !u!1 &3453938471324664758
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,10 +190,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyState: 0
+  MaxHealth: {fileID: 11400000, guid: 6017673fbf98b144098e0a2f4e379b74, type: 2}
+  Health: 2
   player: {fileID: 0}
   speed: 0.2
   chaseRadius: 5
-  attackRadius: 1
+  attackRadius: 0.8
 --- !u!95 &1791791199
 Animator:
   serializedVersion: 4
