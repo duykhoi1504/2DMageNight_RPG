@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8913b361b391f814ea1928aee84d192b, type: 3}
-  m_Name: EnemyHealth
+  m_Script: {fileID: 11500000, guid: 1d6a6abffd96f7a4eb95d78b28eda90c, type: 3}
+  m_Name: PLayerData
   m_EditorClassIdentifier: 
-  Health: 6
-  chaseRadius: 5
-  attackRadius: 0.8
-  speed: 0.2
+  speed: 4
+  delayWeapon: 0.3
+  thrust: 6
+  knockTime: 0.3
+  damage: 3

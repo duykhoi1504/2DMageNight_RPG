@@ -5,12 +5,17 @@ using UnityEngine;
 public class KnockBack : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] PlayerData _playerData;
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
+    [SerializeField] float damage;
     [SerializeField] Enemy_State currentState;
     void Start()
     {
-        
+        thrust=_playerData.thrust;
+        knockTime = _playerData.knockTime;
+        damage=_playerData.damage;
+
     }
 
     // Update is called once per frame
@@ -24,8 +29,10 @@ public class KnockBack : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponentInParent<EnemyController>().setState(Enemy_State.Stagger);
-            Rigidbody2D rigi=other.GetComponent<Rigidbody2D>();
-            
+            other.gameObject.GetComponentInParent<EnemyController>().TakeDamage(damage);
+
+            Rigidbody2D rigi =other.GetComponent<Rigidbody2D>();
+          
             if (rigi!=null)
             {
                 //rigi.isKinematic = false;
@@ -46,8 +53,9 @@ public class KnockBack : MonoBehaviour
 
             yield return new WaitForSeconds(knockTime);
             other.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-         
             enemy.velocity= Vector2.zero;
+            //other.gameObject.GetComponent<EnemyController>().setState(Enemy_State.Walk);
+            //other.gameObject.SetActive(false);
             //enemy.isKinematic=true;
         }
     }

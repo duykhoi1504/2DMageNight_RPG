@@ -8,7 +8,7 @@ public class WeaponParent : MonoBehaviour
     public SpriteRenderer characterRenderer, weaponRenderer;
     public Vector2 PointerPosition { get; set; }
     private Animator animator;
-    public float delay = 0.3f;
+    //public float delay = 0.3f;
     private bool attackBlocked;
     public bool isAttacking { get; private set; }
     public void resetIsAttacking()

@@ -6,4 +6,7 @@ using UnityEngine;
 public class EnemyHealth : ScriptableObject
 {
    public float Health;
+    public float chaseRadius;
+    public float attackRadius;
+    public float speed;
 }

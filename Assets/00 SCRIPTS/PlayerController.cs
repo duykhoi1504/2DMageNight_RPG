@@ -11,12 +11,14 @@ public enum Player_State
 public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] float speed = 4f;
+    [SerializeField] PlayerData _playerData;
     Rigidbody2D rigi;
     Vector3 movement;
    public Player_State PlayerState;
     // Start is called before the first frame update
     void Start()
     {
+        speed = _playerData.speed;
        rigi=this.GetComponent<Rigidbody2D>();
     }
 
@@ -32,6 +34,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             PlayerState = Player_State.Walk;
         }
-        
+       
     }
+   
 }

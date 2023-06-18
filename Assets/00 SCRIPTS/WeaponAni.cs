@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponAni : MonoBehaviour
 {
     // Start is called before the first frame update
-  
+
+    [SerializeField] PlayerData _playerData;
 
     private Animator animator;
     public float delay = 0.3f;
@@ -13,6 +14,7 @@ public class WeaponAni : MonoBehaviour
     public bool isAttacking { get; private set; }
     void Start()
     {
+        delay = _playerData.delayWeapon;
         animator = this.GetComponent<Animator>();
     }
 

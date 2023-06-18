@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc7249d90a021949bb77800e5a3209d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterRenderer: {fileID: 0}
+  characterRenderer: {fileID: 641597754357302924}
   weaponRenderer: {fileID: 641597754327174571}
-  delay: 0.3
 --- !u!1 &641597754327174583
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 641597754327174570}
   - component: {fileID: 641597754327174581}
   - component: {fileID: 641706039}
+  - component: {fileID: 1204821822}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -193,7 +193,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75038458cf559a74a9939968333e1e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   delay: 0.3
+--- !u!114 &1204821822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641597754327174583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
+  thrust: 6
+  knockTime: 0.3
+  currentState: 0
 --- !u!1 &641597754357302921
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   PlayerState: 0
 --- !u!50 &641597755643185601
 Rigidbody2D:
