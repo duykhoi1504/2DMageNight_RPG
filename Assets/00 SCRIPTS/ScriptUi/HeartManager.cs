@@ -53,7 +53,7 @@ public class HeartManager : MonoBehaviour
 
                 hearts[i].sprite = halfHeart;
             }
-            Debug.Log(tempHeart + " " + i);
+            Debug.Log(i + " " + tempHeart);
         }
     }
 }

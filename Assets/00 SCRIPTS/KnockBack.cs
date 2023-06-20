@@ -39,7 +39,6 @@ public class KnockBack : MonoBehaviour
                     other.gameObject.GetComponentInParent<EnemyController>().TakeDamage(damage);
                  
                 }
-                //rigi.isKinematic = false;
                 Vector2 dir = (other.transform.position - this.transform.position).normalized* thrust;
                 rigi.AddForce(dir,ForceMode2D.Impulse);
                 

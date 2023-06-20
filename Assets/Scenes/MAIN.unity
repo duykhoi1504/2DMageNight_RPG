@@ -389,6 +389,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273700874}
   m_CullTransparentMesh: 1
+--- !u!1 &292043488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 641597754327174583, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+  m_PrefabInstance: {fileID: 641597754440170970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &292043495
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292043488}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &329669941
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,10 +654,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1917683330344110431, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3453938471324664758, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1159,27 +1181,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037380015}
   m_CullTransparentMesh: 1
---- !u!1 &1158697296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3453938471324664758, guid: baa0f87ca3e702e41823284943a7f677, type: 3}
-  m_PrefabInstance: {fileID: 605040929}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1158697302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158697296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 6
-  knockTime: 1
-  damage: 1
-  currentState: 0
 --- !u!4 &1272247321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 641597755643185603, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
@@ -1462,6 +1463,14 @@ PrefabInstance:
       propertyPath: damage
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 641597754327174581, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597754327174581, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 641597754357302924, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1648,6 +1657,11 @@ PrefabInstance:
       propertyPath: diaLogText
       value: 
       objectReference: {fileID: 485038029}
+    - target: {fileID: 1375472897168473589, guid: 39ac578cb71fbe34a814dabb37b0187c, type: 3}
+      propertyPath: textDialog
+      value: "H\xECnh nh\u01B0 \u0111\xE2y l\xE0 l\u1EA7n \u0111\u1EA7u c\u1EADu
+        t\u1EDBi \u0111\xE2y, c\u1EADu \u0111\u1EBFn t\u1EEB \u0111\xE2u"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39ac578cb71fbe34a814dabb37b0187c, type: 3}
 --- !u!1001 &5135613202081921646
@@ -1657,6 +1671,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524099155, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496474258370810149, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135613200535824915, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5135613200585369496, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1706,6 +1732,10 @@ PrefabInstance:
       value: TileMapGenarator
       objectReference: {fileID: 0}
     - target: {fileID: 5135613200585369498, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229707162469757826, guid: 1c1fce40d4e95954b885ad18b8394d4f, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
