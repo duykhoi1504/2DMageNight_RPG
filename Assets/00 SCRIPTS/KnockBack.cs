@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] PlayerData _playerData;
+
     
 
     [SerializeField] float thrust;
@@ -14,9 +13,9 @@ public class KnockBack : MonoBehaviour
     [SerializeField] Enemy_State currentState;
     void Start()
     {
-        thrust=_playerData.thrust;
-        knockTime = _playerData.knockTime;
-        damage=_playerData.damage;
+        //thrust=_playerData.thrust;
+        //knockTime = _playerData.knockTime;
+        //damage=_playerData.damage;
 
     }
 
@@ -28,33 +27,36 @@ public class KnockBack : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player"))
         {
-            currentState = Enemy_State.Stagger;
-            other.gameObject.GetComponentInParent<EnemyController>().setState(currentState);
-            other.gameObject.GetComponentInParent<EnemyController>().TakeDamage(damage);
-
-            Rigidbody2D rigi =other.GetComponent<Rigidbody2D>();
-          
+            Rigidbody2D rigi =other.GetComponentInParent<Rigidbody2D>();
             if (rigi!=null)
             {
+                if (other.gameObject.CompareTag("Enemy"))
+                {
+                    currentState = Enemy_State.Stagger;
+                    other.gameObject.GetComponentInParent<EnemyController>().setState(currentState);
+                    other.gameObject.GetComponentInParent<EnemyController>().TakeDamage(damage);
+                 
+                }
                 //rigi.isKinematic = false;
                 Vector2 dir = (other.transform.position - this.transform.position).normalized* thrust;
                 rigi.AddForce(dir,ForceMode2D.Impulse);
-                other.gameObject.GetComponentInChildren<SpriteRenderer>().color= Color.red;
                 
-                StartCoroutine(KnockCo(rigi, other.gameObject));
+                //
+                
+                //
+                StartCoroutine(KnockCo(rigi));
 
             }
         }
     }
-    IEnumerator KnockCo(Rigidbody2D enemy,GameObject other)
+    IEnumerator KnockCo(Rigidbody2D rigi)
     {
-        if(enemy!=null)
+        if(rigi != null)
         {
             yield return new WaitForSeconds(knockTime);
-            other.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            enemy.velocity= Vector2.zero;
+            rigi.velocity= Vector2.zero;
             //other.gameObject.GetComponent<EnemyController>().setState(Enemy_State.Walk);
 
             //enemy.isKinematic=true;

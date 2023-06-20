@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] EnemyHealth MaxHealth;
     public float Health;
     public float damage;
-    AniBase Animator;
+    //AniBase Animator;
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
     //ScriptanleObjects
@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
         //
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         rigi = this.GetComponent<Rigidbody2D>();
-        Animator = this.GetComponentInChildren<AniBase>();
+        //Animator = this.GetComponentInChildren<AniBase>();
     }
 
     // Update is called once per frame

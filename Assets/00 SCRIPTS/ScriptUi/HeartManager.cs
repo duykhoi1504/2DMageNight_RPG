@@ -32,9 +32,10 @@ public class HeartManager : MonoBehaviour
     public void UpdateHearts()
     {
         float tempHeart = PlayerController.Instant.health / 2;
-        Debug.Log(tempHeart);
+        
         for(int i=0;i< _heartContainer.initialValue; i++)
         {
+            
             if (i <= tempHeart - 1)
             {
                 Debug.Log(i);
@@ -52,6 +53,7 @@ public class HeartManager : MonoBehaviour
 
                 hearts[i].sprite = halfHeart;
             }
+            Debug.Log(tempHeart + " " + i);
         }
     }
 }
