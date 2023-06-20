@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6a6abffd96f7a4eb95d78b28eda90c, type: 3}
-  m_Name: PLayerData
+  m_Script: {fileID: 11500000, guid: b0374f64e6f521144993c49c9c69b226, type: 3}
+  m_Name: HeartContainer
   m_EditorClassIdentifier: 
-  Health: 16
-  speed: 4
-  delayWeapon: 0.3
-  thrust: 3
-  knockTime: 0.3
-  damage: 2
+  initialValue: 4

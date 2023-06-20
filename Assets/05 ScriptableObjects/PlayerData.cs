@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PlayerData : ScriptableObject
 {
+    public float Health;
     public float speed;
     public float delayWeapon;
     public float thrust;

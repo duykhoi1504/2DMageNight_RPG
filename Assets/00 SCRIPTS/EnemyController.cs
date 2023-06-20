@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Enemy_State EnemyState;
     [SerializeField] EnemyHealth MaxHealth;
     public float Health;
+    public float damage;
     AniBase Animator;
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
@@ -29,7 +30,9 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
+
         //ScriptableObject
+        damage= MaxHealth.damage;
         Health = MaxHealth.Health;
         speed = MaxHealth.speed;
         chaseRadius = MaxHealth.chaseRadius;
@@ -59,26 +62,34 @@ public class EnemyController : MonoBehaviour
     public void setState(Enemy_State state)
     {
         EnemyState = state;
+      
     }
     private void CheckDistance()
     {
+
         Vector3 dir = player.transform.position - this.transform.position;
         Debug.DrawRay(this.transform.position, dir, Color.red);
         distance = Vector3.Distance(this.transform.position, player.transform.position);
+        movoment = rigi.velocity;
         if (distance <= chaseRadius && distance > attackRadius)
         {
-            //if (EnemyState == Enemy_State.Idle || EnemyState == Enemy_State.Walk && EnemyState != Enemy_State.Stagger)
+            if (EnemyState == Enemy_State.Idle || EnemyState == Enemy_State.Walk && EnemyState != Enemy_State.Stagger)
             //EnemyState = Enemy_State.Walk;
-            
+            {
                 this.transform.position = Vector3.Lerp(this.transform.position, player.transform.position, speed * Time.deltaTime);
                 ChangeState(Enemy_State.Walk);
-            
-        }
-        else
-        {
-            movoment = rigi.velocity;
-            if (movoment == Vector3.zero)
+            }
+            //else if (movoment != Vector3.zero && EnemyState == Enemy_State.Stagger)
+            //    ChangeState(Enemy_State.Walk);
+            else if (movoment == Vector3.zero && EnemyState != Enemy_State.Walk && EnemyState != Enemy_State.Stagger)
                 ChangeState(Enemy_State.Idle);
+
+        }
+         else
+            ChangeState(Enemy_State.Idle);
+         if ( EnemyState == Enemy_State.Stagger) {
+            ChangeState(Enemy_State.Walk);
+
         }
     }
     public void TakeDamage(float damage)
@@ -87,7 +98,7 @@ public class EnemyController : MonoBehaviour
         if (Health <= 0)
             this.gameObject.SetActive(false); 
     }
-    private void ChangeState(Enemy_State state)
+    public void ChangeState(Enemy_State state)
     {
         if (EnemyState != state)
         { 
@@ -103,5 +114,10 @@ public class EnemyController : MonoBehaviour
         else if (dir.x < 0)
             this.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
     }
-    
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.CompareTag("Player"))
+    //        setState(Enemy_State.Stagger);
+    //}
+  
 }

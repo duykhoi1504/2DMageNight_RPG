@@ -9,4 +9,5 @@ public class EnemyHealth : ScriptableObject
     public float chaseRadius;
     public float attackRadius;
     public float speed;
+    public float damage;
 }

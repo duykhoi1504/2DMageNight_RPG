@@ -23,7 +23,7 @@ public class WeaponAni : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            PlayerController.Instant.PlayerState = Player_State.Attack;
+            //PlayerController.Instant.PlayerState = Player_State.Attack;
 
             attack();
         }

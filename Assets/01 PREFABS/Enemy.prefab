@@ -192,6 +192,7 @@ MonoBehaviour:
   EnemyState: 0
   MaxHealth: {fileID: 11400000, guid: 6017673fbf98b144098e0a2f4e379b74, type: 2}
   Health: 2
+  damage: 0
   player: {fileID: 0}
   speed: 0.2
   chaseRadius: 5
