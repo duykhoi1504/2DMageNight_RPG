@@ -10,7 +10,7 @@ public class KnockBack : MonoBehaviour
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
     [SerializeField] float damage;
-    [SerializeField] Enemy_State currentState;
+    //[SerializeField] Enemy_State currentState;
     void Start()
     {
         //thrust=_playerData.thrust;
@@ -32,33 +32,42 @@ public class KnockBack : MonoBehaviour
             Rigidbody2D rigi =other.GetComponentInParent<Rigidbody2D>();
             if (rigi!=null)
             {
-                if (other.gameObject.CompareTag("Enemy"))
+                Vector3 dir = (other.transform.position - this.transform.position).normalized * thrust;
+                rigi.AddForce(dir, ForceMode2D.Impulse);
+                if (other.gameObject.CompareTag("Enemy") )
                 {
-                    currentState = Enemy_State.Stagger;
-                    other.gameObject.GetComponentInParent<EnemyController>().setState(currentState);
-                    other.gameObject.GetComponentInParent<EnemyController>().TakeDamage(damage);
-                 
+
+
+                    //currentState = Enemy_State.Stagger;
+                   
+                        other.gameObject.GetComponent<EnemyController>().setState(Enemy_State.Stagger);
+                        other.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
+                        other.gameObject.GetComponent<EnemyController>().Knock(rigi, knockTime);
+                    
                 }
-                Vector2 dir = (other.transform.position - this.transform.position).normalized* thrust;
-                rigi.AddForce(dir,ForceMode2D.Impulse);
-                
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    //Debug.LogError(other.gameObject.name);
+                    other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+                    other.gameObject.GetComponent<PlayerController>().Knock(knockTime);
+                }
+
+
                 //
-                
+
                 //
-                StartCoroutine(KnockCo(rigi));
+                //StartCoroutine(KnockCo(rigi));
 
             }
         }
     }
-    IEnumerator KnockCo(Rigidbody2D rigi)
-    {
-        if(rigi != null)
-        {
-            yield return new WaitForSeconds(knockTime);
-            rigi.velocity= Vector2.zero;
-            //other.gameObject.GetComponent<EnemyController>().setState(Enemy_State.Walk);
-
-            //enemy.isKinematic=true;
-        }
-    }
+    //IEnumerator KnockCo(Rigidbody2D rigi)
+    //{
+    //    if(rigi != null)
+    //    {
+    //        yield return new WaitForSeconds(knockTime);
+    //        rigi.velocity= Vector2.zero;
+            
+    //    }
+    //}
 }

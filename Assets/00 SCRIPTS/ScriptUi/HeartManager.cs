@@ -38,18 +38,18 @@ public class HeartManager : MonoBehaviour
             
             if (i <= tempHeart - 1)
             {
-                Debug.Log(i);
+            
                 hearts[i].sprite = fullHeart;
             }
             else if (i >= tempHeart)
             {
-                Debug.Log(i);
+            
 
                 hearts[i].sprite = emptyHeart;
             }
             else
             {
-                Debug.Log(i);
+          
 
                 hearts[i].sprite = halfHeart;
             }

@@ -22,17 +22,29 @@ public class PlayerController : Singleton<PlayerController>
     {
         health = _playerData.Health;
         speed = _playerData.speed;
-        rigi = this.GetComponent<Rigidbody2D>();
+        rigi = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
+    private void FixedUpdate()
+    {
+        
+    }
     void Update()
     {
 
         rigi.velocity = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")) * speed;
+
         movement = rigi.velocity;
+        
+        //movement = Vector3.zero;
+
+        //movement.x = Input.GetAxisRaw("Horizontal");
+        //    movement.y = Input.GetAxisRaw("Vertical");
+        //    rigi.velocity = movement * speed;
+
         if (movement != Vector3.zero)
         {
             PlayerState = Player_State.Walk;
@@ -41,22 +53,31 @@ public class PlayerController : Singleton<PlayerController>
         {
             PlayerState = Player_State.Idle;
         }
-
+      
+    }
+    public void Knock( float knockTime)
+    {
+        this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        
+        StartCoroutine(KnockCo( knockTime));
+        
 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator KnockCo( float knockTime)
     {
-        if (collision.CompareTag("Enemy"))
+        if (rigi != null)
         {
-            float damage = collision.gameObject.GetComponent<EnemyController>().damage;
-            Debug.Log(damage);
-            if (health >= 0)
-                health -= damage;
-            ////
-          
+            yield return new WaitForSeconds(knockTime);
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            rigi.velocity = Vector3.zero;
+            
         }
+    }
+    public void TakeDamage(float damage)
+    {
 
+        if (health >= 0)
+            health -= damage;
     }
 
 }

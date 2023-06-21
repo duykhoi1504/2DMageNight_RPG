@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
         
         //
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
-        rigi = this.GetComponent<Rigidbody2D>();
+        rigi = this.gameObject.GetComponent<Rigidbody2D>();
         //Animator = this.GetComponentInChildren<AniBase>();
     }
 
@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
     {
         CheckDistance();
         UpSacle();
-        Debug.Log(EnemyState.ToString());
+        //Debug.Log(EnemyState.ToString());
 
     }
     public Enemy_State getState()
@@ -86,7 +86,6 @@ public class EnemyController : MonoBehaviour
             ChangeState(Enemy_State.Idle);
          if ( EnemyState == Enemy_State.Stagger) {
             ChangeState(Enemy_State.Walk);
-
         }
     }
     public void TakeDamage(float damage)
@@ -111,10 +110,25 @@ public class EnemyController : MonoBehaviour
         else if (dir.x < 0)
             this.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.CompareTag("Player"))
-    //        setState(Enemy_State.Stagger);
-    //}
-  
+ 
+
+    public void Knock(Rigidbody2D _rigi, float knockTime)
+    {
+        if (this.gameObject.activeSelf)
+        {
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            StartCoroutine(KnockCo(_rigi, knockTime));
+        }
+    }
+    IEnumerator KnockCo(Rigidbody2D _rigi, float knockTime)
+    {
+        if (_rigi != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            rigi.velocity = Vector3.zero;
+
+        }
+    }
+
 }

@@ -37,8 +37,8 @@ public class PlayerAni : MonoBehaviour
     {
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
-        Vector2 dir = ((Vector2)mouse - (Vector2)transform.position).normalized;
-        Vector2 scale = transform.localScale;
+        Vector3 dir = ((Vector2)mouse - (Vector2)transform.position).normalized;
+        Vector3 scale = transform.localScale;
         if (dir.x > 0)
             scale.x = 1;
         else if (dir.x < 0)

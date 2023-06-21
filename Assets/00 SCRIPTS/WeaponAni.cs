@@ -9,7 +9,7 @@ public class WeaponAni : MonoBehaviour
     [SerializeField] PlayerData _playerData;
 
     private Animator animator;
-    public float delay = 0.3f;
+    private float delay;
     private bool attackBlocked;
     public bool isAttacking { get; private set; }
     void Start()
