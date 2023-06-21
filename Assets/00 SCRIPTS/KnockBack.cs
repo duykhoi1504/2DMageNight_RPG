@@ -32,6 +32,7 @@ public class KnockBack : MonoBehaviour
             Rigidbody2D rigi =other.GetComponentInParent<Rigidbody2D>();
             if (rigi!=null)
             {
+                
                 Vector3 dir = (other.transform.position - this.transform.position).normalized * thrust;
                 rigi.AddForce(dir, ForceMode2D.Impulse);
                 if (other.gameObject.CompareTag("Enemy") )

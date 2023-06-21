@@ -33,17 +33,20 @@ public class PlayerController : Singleton<PlayerController>
     void Update()
     {
 
-        rigi.velocity = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")) * speed;
+        //rigi.velocity = new Vector2(
+        //    Input.GetAxisRaw("Horizontal"),
+        //    Input.GetAxisRaw("Vertical")) * speed;
 
-        movement = rigi.velocity;
-        
-        //movement = Vector3.zero;
+        //movement = rigi.velocity;
 
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //    movement.y = Input.GetAxisRaw("Vertical");
-        //    rigi.velocity = movement * speed;
+        movement = Vector3.zero;
+
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        if(movement != Vector3.zero)
+        {
+            moveCharacter();
+        }
 
         if (movement != Vector3.zero)
         {
@@ -54,6 +57,10 @@ public class PlayerController : Singleton<PlayerController>
             PlayerState = Player_State.Idle;
         }
       
+    }
+    public void moveCharacter()
+    {
+        rigi.MovePosition(transform.position + movement * speed*Time.deltaTime);
     }
     public void Knock( float knockTime)
     {

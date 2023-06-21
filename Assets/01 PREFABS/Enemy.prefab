@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyState: 0
   MaxHealth: {fileID: 11400000, guid: 6017673fbf98b144098e0a2f4e379b74, type: 2}
-  Health: 2
+  Health: 100
   damage: 2
   player: {fileID: 0}
   speed: 0.2
@@ -252,12 +252,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3453938471324664758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 6
+  thrust: 2
   knockTime: 0.2
   damage: 1
 --- !u!61 &979157434

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8913b361b391f814ea1928aee84d192b, type: 3}
   m_Name: EnemyHealth
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 30
   chaseRadius: 4
   attackRadius: 1
   speed: 0.2

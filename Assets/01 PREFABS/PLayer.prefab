@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 641597755643185601}
   - component: {fileID: 641597755643185600}
   - component: {fileID: 1272247325}
+  - component: {fileID: 1893015843}
   m_Layer: 6
   m_Name: PLayer
   m_TagString: Player
@@ -398,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40902e8c906e76478eb7be30b9a953d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 20
   _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   _HeartManager: {fileID: 11400000, guid: bd466b10f643df9479ef4991c08afa00, type: 2}
   health: 0
@@ -476,3 +477,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1460438, y: 1.7964027}
   m_EdgeRadius: 0
+--- !u!114 &1893015843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641597755643185612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 1
+  knockTime: 0.3
+  damage: 0
