@@ -34,22 +34,24 @@ public class PlayerController : Singleton<PlayerController>
     void Update()
     {
         //cách 1
-        rigi.velocity = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")) * speed;
+        //rigi.velocity = new Vector2(
+        //    Input.GetAxisRaw("Horizontal"),
+        //    Input.GetAxisRaw("Vertical")) * speed;
 
-        movement = rigi.velocity;
+
         //cách 2
-        //movement = Vector3.zero;
+        movement = Vector3.zero;
 
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
         //if (movement != Vector3.zero)
         //{
         //    moveCharacter();
         //}
-
-
+        if (PlayerState == Player_State.Stagger) return;
+            rigi.velocity = movement * speed;
+       
+        //////////////////////
         //if(movement!=Vector3.zero &&    PlayerState != Player_State.Stagger)
         //{
         //    PlayerState = Player_State.Walk;
@@ -95,7 +97,7 @@ public class PlayerController : Singleton<PlayerController>
             
             this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             rigi.velocity = Vector3.zero;
-            //PlayerState = Player_State.Idle;
+            PlayerState = Player_State.Walk;
         }
     }
     public void TakeDamage(float damage)
