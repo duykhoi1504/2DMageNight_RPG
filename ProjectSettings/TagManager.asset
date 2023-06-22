@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -43,11 +44,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 1182475647
+    locked: 0
   - name: TileMap
     uniqueID: 2919836785
-    locked: 0
-  - name: Enemy
-    uniqueID: 2981011689
     locked: 0
   - name: Tree
     uniqueID: 1084393989
@@ -76,6 +77,9 @@ TagManager:
   - name: NPC
     uniqueID: 997643277
     locked: 0
+  - name: Enemy
+    uniqueID: 2981011689
+    locked: 0
   - name: PLayer
     uniqueID: 1542386285
     locked: 0
@@ -84,4 +88,7 @@ TagManager:
     locked: 0
   - name: Tree2
     uniqueID: 3865719585
+    locked: 0
+  - name: OnGround
+    uniqueID: 2478770581
     locked: 0

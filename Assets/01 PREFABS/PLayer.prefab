@@ -122,8 +122,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1816196715
+  m_SortingLayer: 16
   m_SortingOrder: 0
   m_Sprite: {fileID: -1220253029, guid: 43d9e224602817149bceae9f3372b8a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 641597754357302925}
   m_Layer: 6
   m_Name: AniPLayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,8 +303,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1816196715
+  m_SortingLayer: 16
   m_SortingOrder: 0
   m_Sprite: {fileID: 1217694714, guid: 615e40bb31ed62843a085153d38c3c23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

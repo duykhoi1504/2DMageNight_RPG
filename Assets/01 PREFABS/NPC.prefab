@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 997643277
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -159,8 +159,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 997643277
+  m_SortingLayer: 11
   m_SortingOrder: 2
   m_Sprite: {fileID: 827309047, guid: d8436ce02c1d954498352121e4f8c804, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -239,7 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diaLogBox: {fileID: 0}
   diaLogText: {fileID: 0}
-  textDialog: Chao cau
+  textDialog: "H\xECnh nh\u01B0 \u0111\xE2y l\xE0 l\u1EA7n \u0111\u1EA7u c\u1EADu
+    t\u1EDBi \u0111\xE2y, c\u1EADu \u0111\u1EBFn t\u1EEB \u0111\xE2u"
 --- !u!95 &1375472897168473582
 Animator:
   serializedVersion: 4

@@ -99,5 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 0}
   _speed: 3
-  _maxPos: {x: 53, y: 34.1}
+  _maxPos: {x: 18.61, y: 13.2}
   _minPos: {x: -5.11, y: -4}
