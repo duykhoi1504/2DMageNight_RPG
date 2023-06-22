@@ -48,6 +48,8 @@ public class KnockBack : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("Player"))
                 {
+              
+
                     //Debug.LogError(other.gameObject.name);
                     other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
                     other.gameObject.GetComponent<PlayerController>().Knock(knockTime);

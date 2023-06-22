@@ -7,6 +7,7 @@ public enum Player_State
     Idle,
     Walk,
     Attack,
+    Stagger
 }
 public class PlayerController : Singleton<PlayerController>
 {
@@ -43,29 +44,43 @@ public class PlayerController : Singleton<PlayerController>
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if(movement != Vector3.zero)
+        if (movement != Vector3.zero)
         {
             moveCharacter();
         }
+        //if(movement!=Vector3.zero &&    PlayerState != Player_State.Stagger)
+        //{
+        //    PlayerState = Player_State.Walk;
+        //    rigi.velocity = movement * speed;  
+            
+        //}else
+        //    rigi.velocity = Vector3.zero;
 
-        if (movement != Vector3.zero)
+        if (movement != Vector3.zero && PlayerState != Player_State.Stagger)
         {
             PlayerState = Player_State.Walk;
+
         }
-        else if (movement == Vector3.zero)
+        if (movement == Vector3.zero  && PlayerState!=Player_State.Stagger)
         {
             PlayerState = Player_State.Idle;
         }
+        //if( PlayerState == Player_State.Stagger)
+        //{
+        //    rigi.velocity = Vector3.zero;
+        //}
       
     }
     public void moveCharacter()
     {
-        rigi.MovePosition(transform.position + movement * speed*Time.deltaTime);
+        rigi.MovePosition(transform.position + movement * speed * Time.deltaTime);
+        //rigi.velocity = movement;
     }
     public void Knock( float knockTime)
     {
+        //rigi.velocity = Vector3.zero;
         this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
-        
+        PlayerState = Player_State.Stagger;
         StartCoroutine(KnockCo( knockTime));
         
 
@@ -75,9 +90,10 @@ public class PlayerController : Singleton<PlayerController>
         if (rigi != null)
         {
             yield return new WaitForSeconds(knockTime);
+            
             this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             rigi.velocity = Vector3.zero;
-            
+            //PlayerState = Player_State.Idle;
         }
     }
     public void TakeDamage(float damage)

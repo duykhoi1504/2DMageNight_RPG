@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class RoomMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Vector2 cameraChange;
+    
+    [SerializeField] Vector2 cameraChangeMax;
+    [SerializeField] Vector2 cameraChangeMin;
     [SerializeField] Vector3 playerChange;
     public CameraController cam;
     //transfer place text name
@@ -28,8 +30,8 @@ public class RoomMove : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            cam._minPos += cameraChange;
-            cam._maxPos += cameraChange;
+            cam._minPos = cameraChangeMin;
+            cam._maxPos = cameraChangeMax;
             other.transform.position += playerChange;
 
             isNeedText = true;

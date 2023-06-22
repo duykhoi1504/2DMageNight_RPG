@@ -16,8 +16,8 @@ TagManager:
   - PLayer
   - Enemy
   - Weapon
-  - 
-  - 
+  - Tree
+  - TileMap
   - 
   - 
   - 
@@ -42,4 +42,46 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TileMap
+    uniqueID: 2919836785
+    locked: 0
+  - name: Enemy
+    uniqueID: 2981011689
+    locked: 0
+  - name: Tree
+    uniqueID: 1084393989
+    locked: 0
+  - name: Water
+    uniqueID: 950753581
+    locked: 0
+  - name: Land
+    uniqueID: 4120538357
+    locked: 0
+  - name: Dirt
+    uniqueID: 3268524893
+    locked: 0
+  - name: Hill
+    uniqueID: 2452848195
+    locked: 0
+  - name: Grass
+    uniqueID: 2922185141
+    locked: 0
+  - name: Object
+    uniqueID: 3571962233
+    locked: 0
+  - name: House roof
+    uniqueID: 1599112389
+    locked: 0
+  - name: NPC
+    uniqueID: 997643277
+    locked: 0
+  - name: PLayer
+    uniqueID: 1542386285
+    locked: 0
+  - name: Tree1
+    uniqueID: 3319296555
+    locked: 0
+  - name: Tree2
+    uniqueID: 3865719585
     locked: 0
