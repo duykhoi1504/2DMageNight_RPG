@@ -13,7 +13,7 @@ public class ChetsAni : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Sprite openChest;
     [SerializeField] Sprite closeChest;
-
+    [SerializeField] bool isOpen=false;
     Animator ani;
     [SerializeField] Chest_State ChestState;
     SpriteRenderer spriteAni;
@@ -26,55 +26,23 @@ public class ChetsAni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-      
-
-
+        if (Input.GetKey(KeyCode.F))
+            if (isOpen)
+                    ani.SetBool("Open", true);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            ChestState = Chest_State.OpenChest;
-            //ani.enabled = true;
-            ani.SetBool("Close", true);
-            //changeAni(Chest_State.OpenChest);
-            //StartCoroutine(ChangeAiCo());
-
-        
-
-        }
-
+        if (collision.gameObject.CompareTag("Player"))     
+                isOpen = true;             
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            ChestState = Chest_State.CloseChest;
-            ani.enabled = true;
-
-            //changeAni(Chest_State.CloseChest);
-
-            //StartCoroutine(ChangeAiCo());
+            
+                isOpen = false;
             ani.SetBool("Open", false);
-
+         
         }
-    }
-    void changeAni(Chest_State state)
-    {
-        ani.SetTrigger(state.ToString());
-        
-    }        
-   IEnumerator ChangeAiCo()
-    {
-        yield return new WaitForSeconds(0.2f);
-        ani.enabled = false;
-        if (ChestState == Chest_State.OpenChest)
-        {
-            spriteAni.sprite = openChest;
-        }else if(ChestState == Chest_State.CloseChest)
-            spriteAni.sprite = closeChest;
-
-
     }
 }
