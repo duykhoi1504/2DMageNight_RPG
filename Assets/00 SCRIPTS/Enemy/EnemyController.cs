@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float chaseRadius;
     [SerializeField] float attackRadius;
+    [SerializeField]GameObject deadEffect;
     Vector3 movoment ;
     float distance;
     
@@ -92,7 +93,18 @@ public class EnemyController : MonoBehaviour
     {
         Health-= damage;
         if (Health <= 0)
-            this.gameObject.SetActive(false); 
+        {
+            this.gameObject.SetActive(false);
+            DeadEffect();
+        }
+    }
+    public void DeadEffect()
+    {
+        if (deadEffect != null)
+        {
+            GameObject effect = Instantiate(deadEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
     }
     public void ChangeState(Enemy_State state)
     {

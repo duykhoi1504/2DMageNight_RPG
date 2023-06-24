@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a46efaa9b26494cbb66ff0b6f2d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraChangeMax: {x: 18.61, y: 10.5}
+  cameraChangeMax: {x: 18.61, y: 13.2}
   cameraChangeMin: {x: -5.11, y: -4}
   playerChange: {x: -2, y: 0, z: 0}
   cam: {fileID: 0}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a46efaa9b26494cbb66ff0b6f2d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraChangeMax: {x: 18.61, y: 10.5}
+  cameraChangeMax: {x: 18.61, y: 13.2}
   cameraChangeMin: {x: -5.11, y: -4}
   playerChange: {x: 0, y: -2, z: 0}
   cam: {fileID: 0}

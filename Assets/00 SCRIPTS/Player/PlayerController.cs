@@ -18,19 +18,19 @@ public class PlayerController : Singleton<PlayerController>
     Vector3 movement;
     public float health;
     public Player_State PlayerState;
+    private float weapon1 = 1;
+    [SerializeField]GameObject weap;
+    [SerializeField] Inventory playerInventory;
+    [SerializeField] SpriteRenderer recieveItemsSprite;
     // Start is called before the first frame update
     void Start()
     {
         health = _playerData.Health;
         speed = _playerData.speed;
         rigi = this.gameObject.GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
         
     }
+
     void Update()
     {
         //cách 1
@@ -38,7 +38,7 @@ public class PlayerController : Singleton<PlayerController>
         //    Input.GetAxisRaw("Horizontal"),
         //    Input.GetAxisRaw("Vertical")) * speed;
 
-
+        
         //cách 2
         movement = Vector3.zero;
 
@@ -49,7 +49,7 @@ public class PlayerController : Singleton<PlayerController>
         //    moveCharacter();
         //}
         if (PlayerState == Player_State.Stagger) return;
-            rigi.velocity = movement * speed;
+        rigi.velocity = movement * speed;
        
         //////////////////////
         //if(movement!=Vector3.zero &&    PlayerState != Player_State.Stagger)
@@ -73,17 +73,34 @@ public class PlayerController : Singleton<PlayerController>
         //{
         //    rigi.velocity = Vector3.zero;
         //}
-      
+        changeWeapon();
     }
-    //public void moveCharacter()
-    //{
-    //    rigi.MovePosition(transform.position + movement * speed * Time.deltaTime);
-    //    //rigi.velocity = movement;
-    //}
+    public void raiseItem()
+    {
+        recieveItemsSprite.sprite = playerInventory.currentItem.itemSprite;
+    }
+    public void changeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            weapon1 *= -1;
+
+        }
+        if (weapon1 != 1)
+        {
+
+            weap.SetActive(false);
+        }
+        else
+        {
+            weap.SetActive(true);
+        }
+    }
     public void Knock( float knockTime)
     {
         //rigi.velocity = Vector3.zero;
-        this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        //this.transform.GetChild(1).GetComponent<SpriteRenderer>().color = Color.red;
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         PlayerState = Player_State.Stagger;
         StartCoroutine(KnockCo( knockTime));
         
@@ -94,8 +111,9 @@ public class PlayerController : Singleton<PlayerController>
         if (rigi != null)
         {
             yield return new WaitForSeconds(knockTime);
-            
-            this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        //this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            Debug.Log("chamr roi");
             rigi.velocity = Vector3.zero;
             PlayerState = Player_State.Walk;
         }

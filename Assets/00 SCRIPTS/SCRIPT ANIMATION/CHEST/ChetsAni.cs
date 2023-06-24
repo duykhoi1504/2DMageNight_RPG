@@ -14,6 +14,8 @@ public class ChetsAni : MonoBehaviour
     [SerializeField] Sprite openChest;
     [SerializeField] Sprite closeChest;
     [SerializeField] bool isOpen=false;
+
+
     Animator ani;
     [SerializeField] Chest_State ChestState;
     SpriteRenderer spriteAni;

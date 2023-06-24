@@ -8,10 +8,9 @@ public class Patrol : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject player;
-    public Transform[] PointList;
-    public int currentPoint;
     public Transform currentGoal;
     public float rouningDistance;
+    [SerializeField]string textPlace;
     private Rigidbody2D rigi;
     [SerializeField]  float speed=0.5f;
      Vector2 randomVector;
@@ -20,6 +19,8 @@ public class Patrol : MonoBehaviour
 
      void Start()
     {
+        GameObject place = GameObject.FindGameObjectWithTag(textPlace);
+        currentGoal = place.transform;
         rigi = GetComponent<Rigidbody2D>();
         SetRandomVector();
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
@@ -27,7 +28,7 @@ public class Patrol : MonoBehaviour
 
      void Update()
     {
-        Debug.Log(Vector2.Distance(this.transform.position, currentGoal.transform.position));
+       
         timer += Time.deltaTime;
         CheckDistance();
         
@@ -49,7 +50,7 @@ public class Patrol : MonoBehaviour
         //    changeRandomDir();
         // Kiểm tra khoảng cách giữa enemy và vị trí ban đầu
         float distanceToOriginal = Vector3.Distance(transform.position, currentGoal.transform.position);
-        if (distanceToOriginal > 4)
+        if (distanceToOriginal > rouningDistance)
         {
             // Di chuyển enemy về vị trí ban đầu
             rigi.velocity = (currentGoal.transform.position - transform.position).normalized * speed;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 641597754012762261}
   - component: {fileID: 641597754012762250}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WeaponParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 3
-  knockTime: 0.3
+  thrust: 2
+  knockTime: 0.2
   damage: 2
 --- !u!50 &292043495
 Rigidbody2D:
@@ -243,9 +243,9 @@ GameObject:
   - component: {fileID: 641597754357302924}
   - component: {fileID: 641597754357302927}
   - component: {fileID: 641597754357302925}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AniPLayer
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 641597755643185600}
   - component: {fileID: 1272247325}
   - component: {fileID: 1893015843}
+  - component: {fileID: 2012151369}
   m_Layer: 6
   m_Name: PLayer
   m_TagString: Player
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40902e8c906e76478eb7be30b9a953d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 6
   _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   _HeartManager: {fileID: 11400000, guid: bd466b10f643df9479ef4991c08afa00, type: 2}
   health: 0
@@ -438,7 +439,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.65121454}
+  m_Offset: {x: -0.0160141, y: -0.75239587}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -449,7 +450,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.3620665}
+  m_Size: {x: 0.711792, y: 0.103662014}
   m_EdgeRadius: 0
 --- !u!61 &1272247325
 BoxCollider2D:
@@ -464,7 +465,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01306057, y: -0.051662326}
+  m_Offset: {x: -0.031011581, y: -0.71176815}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -475,7 +476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1460438, y: 1.7964027}
+  m_Size: {x: 0.7576561, y: 0.38012218}
   m_EdgeRadius: 0
 --- !u!114 &1893015843
 MonoBehaviour:
@@ -490,5 +491,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 1
-  knockTime: 0.3
+  knockTime: 0.2
   damage: 0
+--- !u!114 &2012151369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641597755643185612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b185a75f6272e24d9df2185f0ffafeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

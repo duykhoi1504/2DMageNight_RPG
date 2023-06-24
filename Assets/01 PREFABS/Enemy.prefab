@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7959404138750588686}
   - component: {fileID: 7959404137828419928}
   - component: {fileID: 7959404137828419931}
+  - component: {fileID: 8841542685888152056}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -166,6 +167,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75780296, y: 0.6523361}
   m_EdgeRadius: 0
+--- !u!114 &8841542685888152056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727549641003469655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241ca016152575f4792c3a5e31cff55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGoal: {fileID: 0}
+  rouningDistance: 4
+  textPlace: SlimePlace
+  speed: 0.5
 --- !u!1 &7959404139896933301
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +258,7 @@ SpriteRenderer:
   m_SortingLayerID: -1313955607
   m_SortingLayer: 12
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1953024356, guid: e84280afaa996a54284ff7af2f9e2a76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -249,7 +266,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7959404139896933303

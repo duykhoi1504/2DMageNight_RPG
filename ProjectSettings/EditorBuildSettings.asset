@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MAIN.unity
+    guid: 7a78306edf5f4ed48b6bc3755df1e220
+  - enabled: 1
+    path: Assets/Scenes/DUNGEON.unity
+    guid: e87b3a70474e28442b5f16725d8d2a51
   m_configObjects: {}
