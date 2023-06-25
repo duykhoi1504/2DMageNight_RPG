@@ -18,13 +18,14 @@ public class PlayerController : Singleton<PlayerController>
     Vector3 movement;
     public float health;
     public Player_State PlayerState;
-    private float weapon1 = 1;
+    //private float weapon1 = 1;
     [SerializeField]GameObject weap;
     [SerializeField] Inventory playerInventory;
     [SerializeField] SpriteRenderer recieveItemsSprite;
     // Start is called before the first frame update
     void Start()
     {
+  
         health = _playerData.Health;
         speed = _playerData.speed;
         rigi = this.gameObject.GetComponent<Rigidbody2D>();
@@ -73,29 +74,29 @@ public class PlayerController : Singleton<PlayerController>
         //{
         //    rigi.velocity = Vector3.zero;
         //}
-        changeWeapon();
+        //changeWeapon();
     }
     public void raiseItem()
     {
         recieveItemsSprite.sprite = playerInventory.currentItem.itemSprite;
     }
-    public void changeWeapon()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            weapon1 *= -1;
+    //public void changeWeapon()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Z))
+    //    {
+    //        weapon1 *= -1;
 
-        }
-        if (weapon1 != 1)
-        {
+    //    }
+    //    if (weapon1 != 1)
+    //    {
 
-            weap.SetActive(false);
-        }
-        else
-        {
-            weap.SetActive(true);
-        }
-    }
+    //        weap.SetActive(false);
+    //    }
+    //    else
+    //    {
+    //        weap.SetActive(true);
+    //    }
+    //}
     public void Knock( float knockTime)
     {
         //rigi.velocity = Vector3.zero;

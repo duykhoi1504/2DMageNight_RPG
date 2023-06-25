@@ -5,24 +5,28 @@ using UnityEngine;
 public class WeaponParent : MonoBehaviour
 {
     // Start is called before the first frame update
-    public SpriteRenderer characterRenderer, weaponRenderer;
+    public SpriteRenderer characterRenderer, weaponRenderer,bowRenderer,ChangeRenderer;
+
     public Vector2 PointerPosition { get; set; }
     private Animator animator;
     //public float delay = 0.3f;
     private bool attackBlocked;
     public bool isAttacking { get; private set; }
+    float cancelWeapon=1f;
     public void resetIsAttacking()
     {
         isAttacking = false;
     }
     void Start()
     {
-
+        ChangeRenderer = weaponRenderer;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (isAttacking) return;
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
@@ -38,11 +42,46 @@ public class WeaponParent : MonoBehaviour
         }
         transform.localScale = scale;
         if (transform.eulerAngles.z> 0 && transform.eulerAngles.z < 180) 
-        { 
-            weaponRenderer.sortingOrder = characterRenderer.sortingOrder - 1;
+        {
+            ChangeRenderer.sortingOrder = characterRenderer.sortingOrder - 1;
         }else {
-            weaponRenderer.sortingOrder = characterRenderer.sortingOrder + 1;
+            ChangeRenderer.sortingOrder = characterRenderer.sortingOrder + 1;
         }
+        changeWeapon();
+    }
+    void changeWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ChangeRenderer = weaponRenderer;
+            bowRenderer.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ChangeRenderer = bowRenderer;
+            weaponRenderer.gameObject.SetActive(false);
+
+        }
+        CancelWeapon();
+
+    }
+    void CancelWeapon()
+    {
+       
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                cancelWeapon *= -1;
+
+            }
+            if (cancelWeapon != 1)
+            {
+
+            ChangeRenderer.gameObject.SetActive(false);
+            }
+            else
+            {
+            ChangeRenderer.gameObject.SetActive(true);
+            }
         
     }
     //public void attack()

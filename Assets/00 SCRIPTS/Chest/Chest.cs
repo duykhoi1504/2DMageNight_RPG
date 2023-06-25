@@ -38,6 +38,7 @@ public class Chest : MonoBehaviour
    public void OpenChest()
     {
         playerInventory.AddItem(contents);
+        Debug.Log("its a"+ contents.itemDescription);
         playerInventory.currentItem= contents;
        
         isOpen= true;

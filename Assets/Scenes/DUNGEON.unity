@@ -183,8 +183,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLayer
       objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: weap
+      value: 
+      objectReference: {fileID: 887792121}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+--- !u!1 &887792121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 641597754012762260, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+  m_PrefabInstance: {fileID: 887792120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2112705086
 PrefabInstance:
   m_ObjectHideFlags: 0
