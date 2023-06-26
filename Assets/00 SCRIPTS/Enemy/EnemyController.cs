@@ -2,14 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Enemy_State
-{
-    Idle,
-    Attack,
-    Walk,
-    Stagger,
-    Dead,
-}
+
 public class EnemyController : MonoBehaviour
 {
 
@@ -128,6 +121,7 @@ public class EnemyController : MonoBehaviour
     {
         if (this.gameObject.activeSelf)
         {
+            setState(Enemy_State.Stagger);
             this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             StartCoroutine(KnockCo(_rigi, knockTime));
         }
@@ -137,6 +131,8 @@ public class EnemyController : MonoBehaviour
         if (_rigi != null)
         {
             yield return new WaitForSeconds(knockTime);
+            setState(Enemy_State.Idle);
+
             this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             rigi.velocity = Vector3.zero;
 

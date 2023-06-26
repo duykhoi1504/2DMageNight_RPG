@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4771d3424489e994ebe1222537673aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: DUNGEON
 --- !u!61 &2972584035806679185
 BoxCollider2D:
   m_ObjectHideFlags: 0

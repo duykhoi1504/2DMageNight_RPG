@@ -12,7 +12,7 @@ public class WeaponParent : MonoBehaviour
     //public float delay = 0.3f;
     private bool attackBlocked;
     public bool isAttacking { get; private set; }
-    float cancelWeapon=1f;
+    [SerializeField]float cancelWeapon=1f;
     public void resetIsAttacking()
     {
         isAttacking = false;
@@ -51,12 +51,12 @@ public class WeaponParent : MonoBehaviour
     }
     void changeWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             ChangeRenderer = weaponRenderer;
             bowRenderer.gameObject.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             ChangeRenderer = bowRenderer;
             weaponRenderer.gameObject.SetActive(false);
@@ -68,7 +68,7 @@ public class WeaponParent : MonoBehaviour
     void CancelWeapon()
     {
        
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 cancelWeapon *= -1;
 

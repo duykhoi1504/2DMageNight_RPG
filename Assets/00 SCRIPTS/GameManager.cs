@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject enemyPrefab;
-    //float timeCount=0;
+    //float timeCount = 0;
     void Start()
     {
         
@@ -16,8 +17,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //timeCount += Time.deltaTime;
-
+        
 
 
         //if (timeCount >= 5)
@@ -30,6 +30,6 @@ public class GameManager : MonoBehaviour
         //    timeCount = 0;
 
         //}
-       
+
     }
 }

@@ -440,6 +440,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Basic Charakter Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 165
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be26becb4fb48eb418fabd3997a573d0
+      internalID: 852175935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -465,6 +486,7 @@ TextureImporter:
       Basic Charakter Spritesheet_4: 590897375
       Basic Charakter Spritesheet_11: 596182615
       Basic Charakter Spritesheet_1: 827309047
+      Basic Charakter Spritesheet_16: 852175935
       Basic Charakter Spritesheet_10: 203792449
       Basic Charakter Spritesheet_13: 885146609
   spritePackingTag: 

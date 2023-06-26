@@ -7,7 +7,8 @@ public class Bullet :MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rig;
     [SerializeField] float _speed;
-    float _countTime = 0, _maxTime = 5;
+    float _countTime = 0;
+    [SerializeField] float _maxTime ;
     // Start is called before the first frame update
     void Start()
     {

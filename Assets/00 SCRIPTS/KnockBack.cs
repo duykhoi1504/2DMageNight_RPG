@@ -41,7 +41,7 @@ public class KnockBack : MonoBehaviour
 
                     //currentState = Enemy_State.Stagger;
                    
-                        other.gameObject.GetComponent<EnemyController>().setState(Enemy_State.Stagger);
+
                         other.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
                         other.gameObject.GetComponent<EnemyController>().Knock(rigi, knockTime);
                     

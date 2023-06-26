@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NPC
   - Water
   - UI
   - PLayer
@@ -27,7 +27,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - MiniMap
   - 
   - 
   - 
@@ -75,11 +75,11 @@ TagManager:
   - name: House roof
     uniqueID: 1599112389
     locked: 0
-  - name: NPC
-    uniqueID: 997643277
-    locked: 0
   - name: Enemy
     uniqueID: 2981011689
+    locked: 0
+  - name: NPC
+    uniqueID: 997643277
     locked: 0
   - name: PLayer
     uniqueID: 1542386285
