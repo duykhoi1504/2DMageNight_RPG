@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MyHP : EnemyController
+public class MyHP : MonoBehaviour,PowerUpInterfave
 {
-    [SerializeField]Slider slider;
-    private void Start()
+    public static float currentHP = 100;
+    
+   public  float HP()
     {
-        
+        return currentHP;
     }
-    private void Update()
-    {
-        slider.value = Health;
-    }
-
+  
 
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294075548}
   - component: {fileID: 1294075550}
-  - component: {fileID: 1294075549}
+  - component: {fileID: 1736125027}
   m_Layer: 0
   m_Name: CameraMini
   m_TagString: Untagged
@@ -76,14 +76,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1294075549
+--- !u!81 &1736125027
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294075547}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &737811815900273259
 GameObject:
   m_ObjectHideFlags: 0

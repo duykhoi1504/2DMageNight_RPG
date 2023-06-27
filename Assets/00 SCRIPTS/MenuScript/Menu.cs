@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject about;
     [SerializeField] GameObject setting;
+    
 
     // Start is called before the first frame update
     public void NewGame()

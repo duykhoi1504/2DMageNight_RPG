@@ -9,16 +9,33 @@ public class Sign : MonoBehaviour
     [SerializeField] GameObject diaLogBox;
     [SerializeField] Text diaLogText;
     public string textDialog;
-    bool playerInRange;
+    [SerializeField] GameObject ava;
+    [SerializeField] bool playerInRange;
+    [SerializeField] Image AvaNPC;
+    [SerializeField] Animator aniAva;
+    [SerializeField] bool isAni;
+    //[SerializeField]List<Animator> ListAniNPC=new List<Animator>();
+
     void Start()
     {
-        
+
+        //aniAva.GetComponent<Animator>();
+        //aniAva.runtimeAnimatorController = animation;           
+
+        AvaNPC.GetComponent<Image>().sprite = ava.GetComponent<SpriteRenderer>().sprite;
+        //aniAva = transform.GetChild(2).GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
+        if (isAni==true)
+        {
+            aniAva.enabled = true;
+        }
+        else
+            aniAva.enabled = false;
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             if(diaLogBox.activeInHierarchy)
                 diaLogBox.SetActive(false);
@@ -26,7 +43,7 @@ public class Sign : MonoBehaviour
            else
             {
                 diaLogBox.SetActive(true);
-
+               
                 diaLogText.text = textDialog;
             
             }
@@ -38,6 +55,7 @@ public class Sign : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
             playerInRange = true;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

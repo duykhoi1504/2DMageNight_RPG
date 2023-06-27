@@ -7,7 +7,7 @@ public class Bow : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject bullet;
-    [SerializeField] float _speed;
+    //[SerializeField] float _timeReload;
     float timeCount = 0;
     bool isImmute;
     void Start()
@@ -17,11 +17,8 @@ public class Bow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.gameObject.activeSelf == false)
-            return;
-
-        if (timeCount > 1)
-            isImmute = false;
+        //if (this.gameObject.activeSelf == false)
+        //    return;
 
  
 
