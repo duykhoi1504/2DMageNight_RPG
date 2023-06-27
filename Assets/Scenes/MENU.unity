@@ -2260,6 +2260,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8880994763548597728, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880994763548597728, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: sfxSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc9f9fb93bd396a4e8b866e21cf7408b, type: 3}
+    - target: {fileID: 8880994763548597728, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: sfxSounds.Array.data[0].name
+      value: click
+      objectReference: {fileID: 0}
     - target: {fileID: 8880994763548597729, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2307,6 +2319,14 @@ PrefabInstance:
     - target: {fileID: 8880994763548597731, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
       propertyPath: m_Name
       value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880994764970544418, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880994765210397352, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: m_Volume
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Heart : PowerUp
 {
     // Start is called before the first frame update
-    [SerializeField] PlayerData _playerData;
+    [SerializeField] float _amoutHeart = 2f;
     float currentHealth;
     void Start()
     {
@@ -19,11 +19,13 @@ public class Heart : PowerUp
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && !collision.isTrigger)
+        if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
-            if (currentHealth == 8f) return;
-            PlayerController.Instant.health += _Heart;
+            if (currentHealth == _playerData.Health) return;
+            PlayerController.Instant.health += _amoutHeart;
             this.gameObject.SetActive(false);
+           
         }
     }
+
 }

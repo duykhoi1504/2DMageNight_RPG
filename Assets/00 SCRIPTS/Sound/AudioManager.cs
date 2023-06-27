@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager :MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class AudioManager :MonoBehaviour
     }
     private void Start()
     {
+        Button[] buttons = FindObjectsOfType<Button>();
+
+        // Duyệt qua từng button và gán hàm xử lý sự kiện click cùng với âm thanh
+        foreach (Button button in buttons)
+        {
+            button.onClick.AddListener(() => PLaySFX("click"));
+        }
+
+        
         PlayMusic("Theme");
     }
     public void PlayMusic(string name)

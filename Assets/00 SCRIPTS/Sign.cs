@@ -22,19 +22,14 @@ public class Sign : MonoBehaviour
         //aniAva.GetComponent<Animator>();
         //aniAva.runtimeAnimatorController = animation;           
 
-        AvaNPC.GetComponent<Image>().sprite = ava.GetComponent<SpriteRenderer>().sprite;
+        //AvaNPC.GetComponent<Image>().sprite = ava.GetComponent<SpriteRenderer>().sprite;
         //aniAva = transform.GetChild(2).GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isAni==true)
-        {
-            aniAva.enabled = true;
-        }
-        else
-            aniAva.enabled = false;
+        
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             if(diaLogBox.activeInHierarchy)
@@ -42,8 +37,14 @@ public class Sign : MonoBehaviour
 
            else
             {
+                if (isAni == true)
+                {
+                    aniAva.enabled = true;
+                }
+                else
+                    aniAva.enabled = false;
                 diaLogBox.SetActive(true);
-               
+                AvaNPC.GetComponent<Image>().sprite = ava.GetComponent<SpriteRenderer>().sprite;
                 diaLogText.text = textDialog;
             
             }

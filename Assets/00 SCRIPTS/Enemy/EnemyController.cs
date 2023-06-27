@@ -19,6 +19,7 @@ public class EnemyController : EnemyBase
     //[SerializeField] float chaseRadius;
     //[SerializeField] float attackRadius;
     [SerializeField] GameObject deadEffect;
+    [SerializeField] LootTable thisLoop;
     //Vector3 movoment ;
     //float distance;
 
@@ -49,11 +50,24 @@ public class EnemyController : EnemyBase
     public void TakeDamage(float damage)
     {
         Health -= damage;
-        MyHP.currentHP = Health;
+         MakeLoop();
         if (Health <= 0)
         {
             this.gameObject.SetActive(false);
+            
             DeadEffect();
+           
+        }
+    }
+    private void MakeLoop()
+    {
+        if (thisLoop != null)
+        {
+            PowerUp current = thisLoop.LootPowerUp();
+            if(current != null)
+            {
+                Instantiate(current.gameObject,transform.position,Quaternion.identity);
+            }
         }
     }
     public void DeadEffect()
