@@ -68,6 +68,7 @@
     <Compile Include="Assets\00 SCRIPTS\Singleton.cs" />
     <Compile Include="Assets\00 SCRIPTS\ScriptUi\MenuInGame.cs" />
     <Compile Include="Assets\05 ScriptableObjects\Inventory.cs" />
+    <Compile Include="Assets\00 SCRIPTS\ScriptUi\CoinManager.cs" />
     <Compile Include="Assets\00 SCRIPTS\ObjectPooling.cs" />
     <Compile Include="Assets\00 SCRIPTS\Power\PowerUp.cs" />
     <Compile Include="Assets\05 ScriptableObjects\FloatValue.cs" />
@@ -97,7 +98,7 @@
     <Compile Include="Assets\00 SCRIPTS\KnockBack.cs" />
     <Compile Include="Assets\00 SCRIPTS\SCRIPT ANIMATION\PLAYER\PlayerAni.cs" />
     <Compile Include="Assets\00 SCRIPTS\Power\Heart.cs" />
-    <Compile Include="Assets\00 SCRIPTS\ScriptUi\CoinManager.cs" />
+    <Compile Include="Assets\00 SCRIPTS\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

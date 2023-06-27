@@ -385,6 +385,7 @@
 "Assets/00 SCRIPTS/SortingY.cs"
 "Assets/00 SCRIPTS/Sound/AudioManager.cs"
 "Assets/00 SCRIPTS/Sound/Sound.cs"
+"Assets/00 SCRIPTS/test.cs"
 "Assets/00 SCRIPTS/Weapon/Bow.cs"
 "Assets/00 SCRIPTS/Weapon/Bullet.cs"
 "Assets/05 ScriptableObjects/EnemyHealth.cs"
