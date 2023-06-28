@@ -20,14 +20,19 @@ public class SortingY : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Obstacle"))
             {
-            this.gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder =
+            //Debug.LogError(this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().name);
+            this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder =
                 collision.gameObject.GetComponent<TilemapRenderer>().sortingOrder - 1;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-      
-            this.gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder =200;
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder =
+                collision.gameObject.GetComponent<TilemapRenderer>().sortingOrder +1;
+        }
+     
         
     }
 }
