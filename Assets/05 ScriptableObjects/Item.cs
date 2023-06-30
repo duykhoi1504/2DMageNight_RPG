@@ -9,4 +9,5 @@ public class Item : ScriptableObject
     public Sprite itemSprite;
     public string itemDescription;
     public bool isKey;
+    public float Coin;
 }

@@ -8,45 +8,42 @@ public class Patrol : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject player;
-    public Transform currentGoal;
+    [SerializeField] GameObject currentGoal;
     public float rouningDistance;
     [SerializeField]string textPlace;
+    GameObject place;
     private Rigidbody2D rigi;
     [SerializeField]  float speed=0.5f;
      Vector2 randomVector;
-     private float timer=0;
-     float timeToChangeDir = 2f;
-
+      float timer=0;
+     float timerToSleep=0;
+    float timeToChangeDir = 2f;
+    [SerializeField] float randomTimer;
      void Start()
     {
-        GameObject place = GameObject.FindGameObjectWithTag(textPlace);
-        currentGoal = place.transform;
-        rigi = GetComponent<Rigidbody2D>();
+        
+        randomTimer = Random.Range(1, 8);
+
+        //GameObject place = GameObject.FindGameObjectWithTag(textPlace);
+
+        rigi = this.gameObject.GetComponent<Rigidbody2D>();
         SetRandomVector();
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
     }
 
-     void Update()
+    void Update()
     {
-       
+        
+        timerToSleep += Time.deltaTime;//check time for enemy idle
         timer += Time.deltaTime;
+        
         CheckDistance();
         
     }
     private void CheckDistance()
     {
-        //if (Vector2.Distance(player.transform.position, this.transform.position) > 5 && isInGround == true)
-        //{
-        //    isInGround = false;
+        
 
-        //}
-        //else if (Vector2.Distance(PointList[0].transform.position, this.transform.position) >= 0 &&
-        //    Vector2.Distance(PointList[0].transform.position, this.transform.position) < 5)
-        //    isInGround = true;
-
-        //if (!isInGround)
-        //    this.transform.position = Vector3.MoveTowards(this.transform.position, PointList[0].transform.position, 1 * Time.deltaTime);
-        //if (isInGround)
         //    changeRandomDir();
         // Kiểm tra khoảng cách giữa enemy và vị trí ban đầu
         float distanceToOriginal = Vector3.Distance(transform.position, currentGoal.transform.position);
@@ -54,25 +51,36 @@ public class Patrol : MonoBehaviour
         {
             // Di chuyển enemy về vị trí ban đầu
             rigi.velocity = (currentGoal.transform.position - transform.position).normalized * speed;
-            return;
+            //return;
 
         }
-        changeRandomDir();
+        else
+            changeRandomDir();
+
         // Tiếp tục di chuyển ngẫu nhiên nếu không vượt quá ngưỡng khoảng cách
 
 
     }
     void changeRandomDir()
     {
-        if (timer >= timeToChangeDir)
+        
+        if (timerToSleep < randomTimer)
         {
-            SetRandomVector();
-            timer = 0f;
+            if (timer >= timeToChangeDir)
+            {
+                SetRandomVector();
+                timer = 0f;
+            }
+            if (rigi.velocity.magnitude < randomVector.magnitude)
+            {
+                rigi.velocity = randomVector * speed;
+            }
         }
-        if (rigi.velocity.magnitude < randomVector.magnitude)
-        {
-            rigi.velocity = randomVector * speed;
-        }
+        else if (timerToSleep > randomTimer)
+            rigi.velocity = Vector2.zero;
+        if (timerToSleep > randomTimer+4f)
+            timerToSleep = 0f;
+
     }
     private void SetRandomVector()
     {

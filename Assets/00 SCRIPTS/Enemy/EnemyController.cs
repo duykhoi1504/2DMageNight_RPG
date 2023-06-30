@@ -1,28 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class EnemyController : EnemyBase
 {
 
-    // Start is called before the first frame update
-    //[SerializeField] Enemy_State EnemyState;
+
     [SerializeField] EnemyHealth MaxHealth;
-    //public float Health;
-    //public float damage;
-    //AniBase Animator;
+
     [SerializeField] GameObject player;
     Rigidbody2D rigi;
-    //ScriptanleObjects
-    //[SerializeField] float speed;
-    //[SerializeField] float chaseRadius;
-    //[SerializeField] float attackRadius;
+
     [SerializeField] GameObject deadEffect;
     [SerializeField] LootTable thisLoop;
-    //Vector3 movoment ;
-    //float distance;
-
+    public float timeCount = 0;
     void Start()
     {
 
@@ -33,18 +26,18 @@ public class EnemyController : EnemyBase
         ChaseRadius = MaxHealth.chaseRadius;
         AttackRadius = MaxHealth.attackRadius;
         
-        //
+
         player = GameObject.FindObjectOfType<PlayerController>().gameObject;
         rigi = this.gameObject.GetComponent<Rigidbody2D>();
-        //Animator = this.GetComponentInChildren<AniBase>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
+        
         CheckDistance(player,rigi);
-        UpSacle(player);
-        //Debug.Log(EnemyState.ToString());
+        //UpSacle(player);
+        //attackEnemy();
 
     }
     public void TakeDamage(float damage)
@@ -78,6 +71,28 @@ public class EnemyController : EnemyBase
             Destroy(effect, 1f);
         }
     }
+    //public void attackEnemy()
+    //{
+    //    //code attack cua enemy
+    //    timeCount += Time.deltaTime;
+    //    Vector3 dir = player.transform.position - this.transform.position;
+    //    float distance = Vector3.Distance(this.transform.position, player.transform.position);
+    //     if (distance <= AttackRadius )
+    //    {
+    //        rigi.velocity = Vector2.zero;
+    //        rigi.AddForce(dir.normalized * 0.2f, ForceMode2D.Impulse);
+    //        if (timeCount > 2f)
+    //        {
+    //            rigi.velocity = Vector2.zero;
+                
+    //            timeCount = 0;
+    //            ChangeState(Enemy_State.Idle);
+               
+    //        }
+
+    //    }
+    //    ////////////
+    //}
     //public Enemy_State getState()
     //{
     //    return EnemyState;

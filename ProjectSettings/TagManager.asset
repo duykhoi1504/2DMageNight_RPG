@@ -90,6 +90,9 @@ TagManager:
   - name: Tree2
     uniqueID: 3865719585
     locked: 0
+  - name: MiniMap
+    uniqueID: 2140925707
+    locked: 0
   - name: OnGround
     uniqueID: 2478770581
     locked: 0

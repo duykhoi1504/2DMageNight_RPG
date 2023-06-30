@@ -19,7 +19,7 @@ public class MyHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(hp);
+    
         hp = e.Health;
         slider.value = hp;
     }
