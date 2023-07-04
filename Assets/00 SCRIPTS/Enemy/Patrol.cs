@@ -7,11 +7,12 @@ using UnityEngine.SocialPlatforms;
 public class Patrol : MonoBehaviour 
 {
     // Start is called before the first frame update
+    [SerializeField]EnemyBase enemyBase;
     GameObject player;
     [SerializeField] GameObject currentGoal;
     public float rouningDistance;
     [SerializeField]string textPlace;
-    GameObject place;
+  
     private Rigidbody2D rigi;
     [SerializeField]  float speed=0.5f;
      Vector2 randomVector;
@@ -21,7 +22,7 @@ public class Patrol : MonoBehaviour
     [SerializeField] float randomTimer;
      void Start()
     {
-        
+        enemyBase=GetComponent<EnemyBase>();
         randomTimer = Random.Range(1, 8);
 
         //GameObject place = GameObject.FindGameObjectWithTag(textPlace);
@@ -42,8 +43,6 @@ public class Patrol : MonoBehaviour
     }
     private void CheckDistance()
     {
-        
-
         //    changeRandomDir();
         // Kiểm tra khoảng cách giữa enemy và vị trí ban đầu
         float distanceToOriginal = Vector3.Distance(transform.position, currentGoal.transform.position);
@@ -52,11 +51,15 @@ public class Patrol : MonoBehaviour
             // Di chuyển enemy về vị trí ban đầu
             rigi.velocity = (currentGoal.transform.position - transform.position).normalized * speed;
             //return;
+            enemyBase.ChangeState(Enemy_State.Walk);
 
         }
         else
+        {
+            
             changeRandomDir();
-
+          
+        }
         // Tiếp tục di chuyển ngẫu nhiên nếu không vượt quá ngưỡng khoảng cách
 
 
@@ -73,6 +76,7 @@ public class Patrol : MonoBehaviour
             }
             if (rigi.velocity.magnitude < randomVector.magnitude)
             {
+                enemyBase.ChangeState(Enemy_State.Walk);
                 rigi.velocity = randomVector * speed;
             }
         }

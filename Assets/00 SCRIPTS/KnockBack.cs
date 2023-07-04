@@ -38,15 +38,15 @@ public class KnockBack : MonoBehaviour
                 if (other.gameObject.CompareTag("Enemy") )
                 {
 
-
+                    //CameraController.Instant.BeginKick();
                     //currentState = Enemy_State.Stagger;
                    
 
-                        other.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
-                        other.gameObject.GetComponent<EnemyController>().Knock(rigi, knockTime);
+                        other.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
+                        other.gameObject.GetComponent<EnemyBase>().Knock( knockTime);
                     
                 }
-                if (other.gameObject.CompareTag("Player"))
+                if (other.gameObject.CompareTag("Player") )
                 {
               
 

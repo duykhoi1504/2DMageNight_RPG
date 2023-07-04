@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 12
-  _maxTime: 0.4
+  _maxTime: 0.6
 --- !u!61 &6710692800240625092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e3de7ba63ef9c4dadaa546be003408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 0.2
-  knockTime: 0
+  thrust: 3
+  knockTime: 0.2
   damage: 2

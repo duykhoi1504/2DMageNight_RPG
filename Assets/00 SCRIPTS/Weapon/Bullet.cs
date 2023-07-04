@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet :MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D rig;
     [SerializeField] float _speed;
-    float _countTime = 0;
+    float _countTime ;
     [SerializeField] float _maxTime ;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,10 @@ public class Bullet :MonoBehaviour
         _countTime -= Time.deltaTime;
 
         if (_countTime < 0)
+        {
             this.gameObject.SetActive(false);
+            _countTime = _maxTime;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Bow : MonoBehaviour
+public class Bow :ObjectPoolingX<Bow>
 {
     // Start is called before the first frame update
     [SerializeField] GameObject bullet;
     //[SerializeField] float _timeReload;
     float timeCount = 0;
     bool isImmute;
+    [SerializeField] List<GameObject> _poolObjects2 = new List<GameObject>();
     void Start()
     {
     }
@@ -43,10 +44,14 @@ public class Bow : MonoBehaviour
         Quaternion newRotation =this.transform.rotation* Quaternion.Euler(0f, 0f, -90f);
 
 
-        Instantiate(bullet,this.transform.position, newRotation);
+        //Instantiate(bullet, this.transform.position, newRotation);
 
-
-        bullet.SetActive(true);
+        GameObject g2= this.GetObject(bullet);
+        g2.transform.rotation = newRotation;
+        g2.transform.position=transform.position;
+        g2.SetActive(true);
+        //bullet.SetActive(true);
         timeCount = 0;
     }
+
 }

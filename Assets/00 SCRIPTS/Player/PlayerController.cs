@@ -76,6 +76,8 @@ public class PlayerController : Singleton<PlayerController>
         //}
         //changeWeapon();
     }
+
+    ///
     public void raiseItem()
     {
         recieveItemsSprite.sprite = playerInventory.currentItem.itemSprite;
@@ -114,7 +116,7 @@ public class PlayerController : Singleton<PlayerController>
             yield return new WaitForSeconds(knockTime);
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         //this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            Debug.Log("chamr roi");
+            
             rigi.velocity = Vector3.zero;
             PlayerState = Player_State.Walk;
         }

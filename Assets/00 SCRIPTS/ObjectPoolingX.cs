@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolingX<T> : MonoBehaviour where T : MonoBehaviour
+public class ObjectPoolingX<T> :MonoBehaviour
 {
 
     private static ObjectPoolingX<T> _instant;
@@ -19,34 +19,34 @@ public class ObjectPoolingX<T> : MonoBehaviour where T : MonoBehaviour
     }
 
 
-    Dictionary<T, List<T>> _poolObjects = new Dictionary<T, List<T>>();
-    Dictionary<GameObject, List<GameObject>> _poolObjects2 = new Dictionary<GameObject, List<GameObject>>();
+    //Dictionary<T, List<T>> _poolObjects = new Dictionary<T, List<T>>();
+   Dictionary<GameObject, List<GameObject>> _poolObjects2 = new Dictionary<GameObject, List<GameObject>>();
 
-    public T GetObjectType(T key)
-    {
-        List<T> _itemPool = new List<T>();
-        if (!_poolObjects.ContainsKey(key))
-        {
-            _poolObjects.Add(key, _itemPool);
-        }
-        else
-        {
-            _itemPool = _poolObjects[key];
-        }
+    //public T GetObjectType(T key)
+    //{
+    //    List<T> _itemPool = new List<T>();
+    //    if (!_poolObjects.ContainsKey(key))
+    //    {
+    //        _poolObjects.Add(key, _itemPool);
+    //    }
+    //    else
+    //    {
+    //        _itemPool = _poolObjects[key];
+    //    }
 
 
-        foreach (T g in _itemPool)
-        {
-            if (g.gameObject.activeSelf)
-                continue;
-            return g;
-        }
+    //    foreach (T g in _itemPool)
+    //    {
+    //        if (g.gameObject.activeSelf)
+    //            continue;
+    //        return g;
+    //    }
 
-        T g2 = Instantiate(key, this.transform.position, Quaternion.identity);
-        _poolObjects[key].Add(g2);
-        return g2;
+    //    T g2 = Instantiate(key, this.transform.position, Quaternion.identity);
+    //    _poolObjects[key].Add(g2);
+    //    return g2;
 
-    }
+    //}
 
     public GameObject GetObject(GameObject key)
     {
