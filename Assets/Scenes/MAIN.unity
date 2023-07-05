@@ -2915,6 +2915,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &853940953 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 641597754357302924, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+  m_PrefabInstance: {fileID: 641597754440170970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879295918
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,6 +3837,16 @@ SpriteRenderer:
 --- !u!4 &1272247321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 641597755643185603, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+  m_PrefabInstance: {fileID: 641597754440170970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1272247325 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1272247325, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+  m_PrefabInstance: {fileID: 641597754440170970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1272247326 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 641597755643185600, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
   m_PrefabInstance: {fileID: 641597754440170970}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289362124
@@ -4916,7 +4931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204821822, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: damage
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1204821822, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: thrust
@@ -4929,6 +4944,30 @@ PrefabInstance:
     - target: {fileID: 1272247325, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: m_Offset.y
       value: -0.5341139
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_SortingLayer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272247328, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1816196715
       objectReference: {fileID: 0}
     - target: {fileID: 1893015843, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: damage
@@ -4959,6 +4998,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641597754357302924, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597754357302924, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -4969,6 +5012,10 @@ PrefabInstance:
     - target: {fileID: 641597755643185600, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: m_Size.y
       value: 0.110609055
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185600, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641597755643185600, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: m_Offset.y
@@ -5022,6 +5069,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLayer
       objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: Collider
+      value: 
+      objectReference: {fileID: 1272247326}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: mySprite
+      value: 
+      objectReference: {fileID: 853940953}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: flashColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: flashColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: flashColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: flashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: flashDuration
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: numberOfFlash
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: regularColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: regularColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: regularColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: regularColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 641597755643185613, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: triggerCollider
+      value: 
+      objectReference: {fileID: 1272247325}
     - target: {fileID: 8856423217705419914, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: Obj_prefab
       value: 

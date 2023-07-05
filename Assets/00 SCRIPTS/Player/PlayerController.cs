@@ -11,17 +11,32 @@ public enum Player_State
 }
 public class PlayerController : Singleton<PlayerController>
 {
+    [Header("PlayerState")]
+    public Player_State PlayerState;
+
+    [Header("ProfilePlayer")]
     [SerializeField] float speed = 4f;
     [SerializeField] PlayerData _playerData;
     [SerializeField] FloatValue _HeartManager;
     Rigidbody2D rigi;
     Vector3 movement;
     public float health;
-    public Player_State PlayerState;
+    
     //private float weapon1 = 1;
     [SerializeField]GameObject weap;
     [SerializeField] Inventory playerInventory;
     [SerializeField] SpriteRenderer recieveItemsSprite;
+
+    [Header("IframeFlash")]
+    [SerializeField] Color flashColor;
+    [SerializeField] Color regularColor;
+    [SerializeField] float flashDuration;
+    [SerializeField] float numberOfFlash;
+    [SerializeField] Collider2D triggerCollider;
+    [SerializeField] Collider2D Collider;
+
+    [SerializeField] SpriteRenderer mySprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,11 +114,18 @@ public class PlayerController : Singleton<PlayerController>
     //        weap.SetActive(true);
     //    }
     //}
+    public void TakeDamage(float damage)
+    {
+
+        if (health >= 0)
+            health -= damage;
+    }
     public void Knock( float knockTime)
     {
         //rigi.velocity = Vector3.zero;
         //this.transform.GetChild(1).GetComponent<SpriteRenderer>().color = Color.red;
-        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        
         PlayerState = Player_State.Stagger;
         StartCoroutine(KnockCo( knockTime));
         
@@ -113,19 +135,31 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (rigi != null)
         {
+            StartCoroutine(FlashCo());
             yield return new WaitForSeconds(knockTime);
-        this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
+        //this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
         //this.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             
             rigi.velocity = Vector3.zero;
             PlayerState = Player_State.Walk;
         }
     }
-    public void TakeDamage(float damage)
+
+    IEnumerator FlashCo()
     {
+        int temp = 0;
+        triggerCollider.enabled = false;
+        Collider.enabled = false;
+        while (temp < numberOfFlash)
+        {
+            mySprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            mySprite.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        triggerCollider.enabled = true;
+        Collider.enabled = true;
 
-        if (health >= 0)
-            health -= damage;
     }
-
 }
