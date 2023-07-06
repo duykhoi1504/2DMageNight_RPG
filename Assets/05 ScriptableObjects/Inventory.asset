@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   currentItem: {fileID: 11400000, guid: 4f4096f676022444dab47defaa9f988e, type: 2}
-  items: []
-  numberOfKeys: 0
-  coin: 8800
+  items:
+  - {fileID: 11400000, guid: 4f4096f676022444dab47defaa9f988e, type: 2}
+  numberOfKeys: 3
+  coin: 400
