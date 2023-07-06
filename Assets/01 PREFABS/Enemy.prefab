@@ -458,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.929985, y: 17.899977}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -14, y: 29.11}
+  m_SizeDelta: {x: 222.54, y: 50.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6052653573348357249
 CanvasRenderer:
@@ -490,8 +490,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 9722c0808bb28714bacc3d22a9fe3f62, type: 3}
+    m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyState: 0
   enemyName: Slime
-  MaxHealth: 20
+  maxHealth: 20
   health: 0
   speed: 0.2
   chaseRadius: 4
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBase: {fileID: 0}
   currentGoal: {fileID: 0}
-  rouningDistance: 4
+  rouningDistance: 6
   textPlace: RoomA
   speed: 0.5
   randomTimer: 0

@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -18.57, y: 21.26}
+  m_SizeDelta: {x: 221.53, y: 38.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3835956514292857349
 CanvasRenderer:
@@ -67,12 +67,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 9722c0808bb28714bacc3d22a9fe3f62, type: 3}
+    m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 2
+    m_MaxSize: 54
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -375,7 +375,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7965858592048870206}
-  - component: {fileID: 7965858592048870204}
   - component: {fileID: 7965858592048870205}
   m_Layer: 5
   m_Name: Canvas
@@ -406,21 +405,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.3, y: 0.8}
   m_SizeDelta: {x: 543.75, y: 353.00003}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7965858592048870204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7965858592048870207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb8dc36ce577bb4697a50079e29248f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  e: {fileID: 0}
-  slider: {fileID: 7965858592492452358}
 --- !u!223 &7965858592048870205
 Canvas:
   m_ObjectHideFlags: 0
@@ -606,9 +590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb8dc36ce577bb4697a50079e29248f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  e: {fileID: 0}
-  slider: {fileID: 0}
+  _enemy: {fileID: 0}
+  _slider: {fileID: 7965858592492452358}
 --- !u!114 &7965858592883677860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyState: 0
   enemyName: Skeleton
-  MaxHealth: 20
+  maxHealth: 20
   health: 0
   speed: 0.3
   chaseRadius: 5
@@ -634,7 +617,7 @@ MonoBehaviour:
   deadEffect: {fileID: 5267493409132897480, guid: 3b9d5ae7c327eee4c93effb17bf8658b, type: 3}
   thisLoop: {fileID: 11400000, guid: 182c2187fb137c345af9044d25b49e6b, type: 2}
   _ani: {fileID: 0}
-  textName: {fileID: 0}
+  textName: {fileID: 6684644273160244540}
 --- !u!61 &7965858592883677864
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -716,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBase: {fileID: 0}
   currentGoal: {fileID: 0}
-  rouningDistance: 3
+  rouningDistance: 6
   textPlace: RoomA
   speed: 0.5
   randomTimer: 0
