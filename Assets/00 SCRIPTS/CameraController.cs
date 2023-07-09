@@ -6,7 +6,7 @@ public class CameraController : Singleton<CameraController>
 {
     // Start is called before the first frame update
     [SerializeField] Transform _playerTransform;
-    [SerializeField] float _speed = 3;
+    [SerializeField] float _speed;
      public Vector2 _maxPos;
      public Vector2 _minPos;
     Animator ani;
@@ -24,7 +24,7 @@ public class CameraController : Singleton<CameraController>
         pos.x=Mathf.Clamp(pos.x,_minPos.x,_maxPos.x);
         pos.y = Mathf.Clamp(pos.y, _minPos.y, _maxPos.y);
 
-        this.transform.position = Vector3.Lerp(this.transform.position, pos, _speed);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, pos, _speed);
     }
     public void BeginKick()
     {

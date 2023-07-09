@@ -2049,7 +2049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 368.0871, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129922797
@@ -2272,6 +2272,10 @@ PrefabInstance:
       propertyPath: sfxSounds.Array.data[0].name
       value: click
       objectReference: {fileID: 0}
+    - target: {fileID: 8880994763548597728, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
+      propertyPath: musicSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1be97ddfb6e9da941a9dab98bf27a579, type: 3}
     - target: {fileID: 8880994763548597729, guid: 1f4fbc964b7bef9499b8a9f4ac457257, type: 3}
       propertyPath: m_RootOrder
       value: 3
