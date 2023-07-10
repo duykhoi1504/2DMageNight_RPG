@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Soldier Sword
   m_EditorClassIdentifier: 
   itemName: Soldier Sword
-  itemDesciption: Sword abcxyz
+  itemDesciption: Sword You can use this to hit enemy
   itemImage: {fileID: -1220253029, guid: 43d9e224602817149bceae9f3372b8a3, type: 3}
-  numberHeld: 1
-  usable: 0
+  numberHeld: 0
+  usable: 1
   unique: 1
+  thisEvent:
+    m_PersistentCalls:
+      m_Calls: []

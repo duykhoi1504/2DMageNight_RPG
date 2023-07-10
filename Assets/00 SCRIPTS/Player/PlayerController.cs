@@ -21,7 +21,8 @@ public class PlayerController : Singleton<PlayerController>
     Rigidbody2D rigi;
     Vector3 movement;
     public float health;
-    
+    public float mana;
+
     //private float weapon1 = 1;
     [SerializeField]GameObject weap;
     [SerializeField] Inventory playerInventory;
@@ -37,12 +38,15 @@ public class PlayerController : Singleton<PlayerController>
 
     [SerializeField] SpriteRenderer mySprite;
 
+    public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-  
-        health = _playerData.Health;
-        speed = _playerData.speed;
+    
+        health = PlayerData.Health;
+        mana = PlayerData.mana;
+        speed = PlayerData.speed;
         rigi = this.gameObject.GetComponent<Rigidbody2D>();
         
     }

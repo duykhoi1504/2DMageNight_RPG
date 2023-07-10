@@ -30,14 +30,14 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
-    void Start()
+    public void ClickOn()
     {
-        
-    }
+        if(thisItem)
+        {
+            thisManager.SetupDescriptionAndButton(thisItem.itemDesciption,
+                thisItem.usable,thisItem);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
+   
 }

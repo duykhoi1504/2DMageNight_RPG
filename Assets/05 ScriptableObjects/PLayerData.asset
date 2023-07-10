@@ -18,3 +18,4 @@ MonoBehaviour:
   thrust: 3
   knockTime: 0.3
   damage: 2
+  mana: 20

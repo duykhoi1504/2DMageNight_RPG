@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private Text descriptionText;
     [SerializeField] private GameObject useButton;
-
+    public IventoryItem currentItem;
     public void SetTextAndButton(string description,bool buttonActive)
     {
         descriptionText.text = description;
@@ -30,27 +30,58 @@ public class InventoryManager : MonoBehaviour
     {
         if (playerInventory)
         {
-            for(int i=0;i<playerInventory.myInventory.Count;i++)
+            for (int i = 0; i < playerInventory.myInventory.Count; i++)
             {
-               
-                GameObject temp= Instantiate(blankInventorySlot,
-                    inventoryPanel.transform.position,Quaternion.identity);
-                temp.transform.SetParent(inventoryPanel.transform);
-                InventorySlot newSlot=temp.GetComponent<InventorySlot>();
-                  if(newSlot)
-                newSlot.Setup(playerInventory.myInventory[i], this);
-            }
+                if (playerInventory.myInventory[i].numberHeld > 0)
+                {
+                    GameObject temp = Instantiate(blankInventorySlot,
+                        inventoryPanel.transform.position, Quaternion.identity);
+                    temp.transform.SetParent(inventoryPanel.transform);
+                    InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+                    if (newSlot)
+                    {
+                        newSlot.Setup(playerInventory.myInventory[i], this);
+                    }
+                }
+            } 
         }
     }
-    void Start()
+   public  void OnEnable()
     {
+        ClearInventorySlots();
         MakeInventorySlots();
-        SetTextAndButton("", true);
+        Debug.Log("Made Inventory");
+        SetTextAndButton("", false );
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetupDescriptionAndButton(string newDescriptionString,
+        bool isButtonUsable,IventoryItem newItem )
     {
-        
+        currentItem = newItem;
+        descriptionText.text = newDescriptionString;
+        useButton.SetActive(isButtonUsable);
+    }
+    public void ClearInventorySlots()
+    {
+        for(int i = 0; i < inventoryPanel.transform.childCount; i++)
+        {
+            Destroy(inventoryPanel.transform.GetChild(i).gameObject);
+        }
+    }
+    public void UseButtonPressed()
+    {
+        if (currentItem)
+        {
+            currentItem.USe();
+            //clear all if the inventory slots
+            ClearInventorySlots();
+            //refill all slots with new nubers
+            MakeInventorySlots();
+            if (currentItem.numberHeld <= 0)
+            {
+                SetTextAndButton("", false);
+            }
+        }
     }
 }

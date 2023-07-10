@@ -11,7 +11,9 @@ public class PlayerData : ScriptableObject
     public float thrust;
     public float knockTime;
     public float damage;
-   
+    public float mana;
+
+
 
 
 
