@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,13 +16,14 @@ public class PlayerController : Singleton<PlayerController>
     public Player_State PlayerState;
 
     [Header("ProfilePlayer")]
-    [SerializeField] float speed = 4f;
+    [SerializeField] float speed ;
     [SerializeField] PlayerData _playerData;
     [SerializeField] FloatValue _HeartManager;
-    Rigidbody2D rigi;
-    Vector3 movement;
     public float health;
     public float mana;
+
+
+
 
     //private float weapon1 = 1;
     [SerializeField]GameObject weap;
@@ -36,9 +38,13 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] Collider2D triggerCollider;
     [SerializeField] Collider2D Collider;
 
+    Rigidbody2D rigi;
+    Vector3 movement;
     [SerializeField] SpriteRenderer mySprite;
 
     public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
+    public Vector3 Movement { get => movement; set => movement = value; }
+    public float Speed { get => speed; set => speed = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -53,71 +59,42 @@ public class PlayerController : Singleton<PlayerController>
 
     void Update()
     {
+
         //cách 1
         //rigi.velocity = new Vector2(
         //    Input.GetAxisRaw("Horizontal"),
         //    Input.GetAxisRaw("Vertical")) * speed;
 
-        
+
         //cách 2
         movement = Vector3.zero;
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        //if (movement != Vector3.zero)
-        //{
-        //    moveCharacter();
-        //}
+
         if (PlayerState == Player_State.Stagger) return;
         rigi.velocity = movement * speed;
        
-        //////////////////////
-        //if(movement!=Vector3.zero &&    PlayerState != Player_State.Stagger)
-        //{
-        //    PlayerState = Player_State.Walk;
-        //    rigi.velocity = movement * speed;  
 
-        //}else
-        //    rigi.velocity = Vector3.zero;
-
-        if (movement != Vector3.zero && PlayerState != Player_State.Stagger)
+        if (Movement != Vector3.zero && PlayerState != Player_State.Stagger)
         {
             PlayerState = Player_State.Walk;
 
         }
-        if (movement == Vector3.zero  && PlayerState!=Player_State.Stagger)
+        if (Movement == Vector3.zero  && PlayerState!=Player_State.Stagger)
         {
             PlayerState = Player_State.Idle;
         }
-        //if( PlayerState == Player_State.Stagger)
-        //{
-        //    rigi.velocity = Vector3.zero;
-        //}
-        //changeWeapon();
+        //dash
+        
     }
 
+  
     ///
-    public void raiseItem()
-    {
-        recieveItemsSprite.sprite = playerInventory.currentItem.itemSprite;
-    }
-    //public void changeWeapon()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Z))
-    //    {
-    //        weapon1 *= -1;
+    ///
 
-    //    }
-    //    if (weapon1 != 1)
-    //    {
 
-    //        weap.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        weap.SetActive(true);
-    //    }
-    //}
+
     public void TakeDamage(float damage)
     {
 
