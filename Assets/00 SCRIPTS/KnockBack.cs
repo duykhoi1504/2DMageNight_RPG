@@ -10,6 +10,7 @@ public class KnockBack : MonoBehaviour
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
     [SerializeField] float damage;
+    [SerializeField] GameObject textPoup;
 
     public float Damage { get => damage; set => damage = value; }
 
@@ -46,7 +47,9 @@ public class KnockBack : MonoBehaviour
                    
 
                         other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
-                        other.gameObject.GetComponent<EnemyBase>().Knock( knockTime);
+                    FloatText(Color.white, other.gameObject);
+
+                    other.gameObject.GetComponent<EnemyBase>().Knock( knockTime);
                     
                 }
                 if (other.gameObject.CompareTag("Player") )
@@ -55,25 +58,23 @@ public class KnockBack : MonoBehaviour
 
                     //Debug.LogError(other.gameObject.name);
                     other.gameObject.GetComponent<PlayerController>().TakeDamage(Damage);
+                     FloatText(Color.red,other.gameObject);
                     other.gameObject.GetComponent<PlayerController>().Knock(knockTime);
                 }
 
 
-                //
-
-                //
-                //StartCoroutine(KnockCo(rigi));
-
             }
         }
     }
-    //IEnumerator KnockCo(Rigidbody2D rigi)
-    //{
-    //    if(rigi != null)
-    //    {
-    //        yield return new WaitForSeconds(knockTime);
-    //        rigi.velocity= Vector2.zero;
-            
-    //    }
-    //}
+    public void FloatText(Color color,GameObject thisGO)
+    {
+
+        GameObject g2 = Instantiate(textPoup, this.transform.position, Quaternion.identity);
+        g2.GetComponent<TextMesh>().text = "-"+damage.ToString();
+        g2.GetComponent<TextMesh>().color = color;
+
+        g2.transform.rotation = thisGO.transform.rotation;
+        g2.transform.position = thisGO.transform.position;
+    }
+
 }

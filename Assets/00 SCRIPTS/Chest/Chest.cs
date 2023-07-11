@@ -7,14 +7,15 @@ using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
-    public Item contents;
-    public Inventory playerInventory;
+    //public Item contents;
+    //public Inventory playerInventory;
 
     public bool isOpen;
     public bool playerInrange;
-
-    public GameObject dialogWindow;
-    public GameObject diaLogText;
+    
+    //public GameObject dialogWindow;
+    //public GameObject diaLogText;
+    [SerializeField] GameObject item;
     void Start()
     {
         
@@ -29,23 +30,25 @@ public class Chest : MonoBehaviour
             {
                 OpenChest();
             }
-            else
-            {
-                ChestAlreadyOpem();
-            }
+            //else
+            //{
+            //    ChestAlreadyOpem();
+            //}
         }
     }
    public void OpenChest()
     {
-        playerInventory.AddItem(contents);
-        Debug.Log("its a"+ contents.itemDescription);
-        playerInventory.currentItem= contents;
+        //playerInventory.AddItem(contents);
+        GameObject _item= Instantiate(item,this.transform.position, Quaternion.identity);
+        _item.transform.localPosition += new Vector3(0f, 1f, 0f);
+        //Debug.Log("its a"+ contents.itemDescription);
+        //playerInventory.currentItem= contents;
        
         isOpen= true;
     }
     public void ChestAlreadyOpem()
     {
-        playerInventory.currentItem= null;
+        //playerInventory.currentItem= null;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

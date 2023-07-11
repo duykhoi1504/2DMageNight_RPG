@@ -27,16 +27,19 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(state==AbilityState.ready)
+        switch (state) 
         {
-            if(Input.GetKeyDown(key)) {
+        case AbilityState.ready:
+        
+            if (Input.GetKeyDown(key)) 
+            {
                 ability.Activate(this.gameObject);
                 state = AbilityState.active;
                 activeTime = ability.activeTime;
             }
-        }
-        else if (state == AbilityState.active)
-        {
+            break;
+         case AbilityState.active:
+        
             if (activeTime > 0)
             {
                 activeTime -= Time.deltaTime;
@@ -47,9 +50,9 @@ public class AbilityManager : MonoBehaviour
                 state = AbilityState.cooldown;
                 coolDownTIme = ability.coolDownTime;
             }
-        }
-        else if(state == AbilityState.cooldown)
-        {
+              break;
+         case AbilityState.cooldown:
+        
             if (coolDownTIme > 0)
             {
                 coolDownTIme -= Time.deltaTime;
@@ -57,8 +60,9 @@ public class AbilityManager : MonoBehaviour
             else
             {
                 state = AbilityState.ready;
-                
+
             }
+            break;
         }
-    }
+     }
 }
