@@ -21,7 +21,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] FloatValue _HeartManager;
     public float health;
     public float mana;
-
+    float normalSpeed;
 
 
 
@@ -45,14 +45,16 @@ public class PlayerController : Singleton<PlayerController>
     public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
     public Vector3 Movement { get => movement; set => movement = value; }
     public float Speed { get => speed; set => speed = value; }
+    public float NormalSpeed { get => normalSpeed; set => normalSpeed = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        normalSpeed= PlayerData.speed;
+         speed = normalSpeed;
         health = PlayerData.Health;
         mana = PlayerData.mana;
-        speed = PlayerData.speed;
+      
         rigi = this.gameObject.GetComponent<Rigidbody2D>();
         
     }

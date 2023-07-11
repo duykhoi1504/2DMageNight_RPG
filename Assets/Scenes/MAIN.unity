@@ -1666,8 +1666,12 @@ PrefabInstance:
       objectReference: {fileID: 1272247325}
     - target: {fileID: 8342906813633391778, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: key
-      value: 32
+      value: 304
       objectReference: {fileID: 0}
+    - target: {fileID: 8342906813633391778, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 11400000, guid: 711a3248b7183c4439817bb2fa1dec74, type: 2}
     - target: {fileID: 8856423217705419914, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: Obj_prefab
       value: 

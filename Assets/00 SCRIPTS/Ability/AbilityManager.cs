@@ -20,7 +20,7 @@ public class AbilityManager : MonoBehaviour
     void Start()
     {
         AbilityState state = AbilityState.ready;
-        ability = GetComponent<AbilityBase>();
+     
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class AbilityManager : MonoBehaviour
             }
             else
             {
+                ability.BeginCoolDown(gameObject);
                 state = AbilityState.cooldown;
                 coolDownTIme = ability.coolDownTime;
             }

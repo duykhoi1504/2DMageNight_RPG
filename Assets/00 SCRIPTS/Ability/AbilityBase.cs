@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityBase : MonoBehaviour
+public class AbilityBase : ScriptableObject
 {
     public string name;
     public float coolDownTime;
@@ -10,5 +10,9 @@ public class AbilityBase : MonoBehaviour
     public virtual void Activate(GameObject parent)
     {
     
+    }
+    public virtual void BeginCoolDown(GameObject parent)
+    {
+
     }
 }

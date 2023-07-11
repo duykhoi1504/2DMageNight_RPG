@@ -616,7 +616,6 @@ GameObject:
   - component: {fileID: 641597755643185603}
   - component: {fileID: 641597755643185613}
   - component: {fileID: 8342906813633391778}
-  - component: {fileID: 701923028550030049}
   - component: {fileID: 6304666898329139877}
   - component: {fileID: 641597755643185601}
   - component: {fileID: 641597755643185600}
@@ -691,24 +690,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f767988a416bfb34ba0efca78e011964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   ability: {fileID: 0}
   key: 48
---- !u!114 &701923028550030049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641597755643185612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0ed59eac3812c4fbe0653f15eb543c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: dash
-  coolDownTime: 2
-  activeTime: 0.5
-  dashVelocity: 60
 --- !u!114 &6304666898329139877
 MonoBehaviour:
   m_ObjectHideFlags: 0
