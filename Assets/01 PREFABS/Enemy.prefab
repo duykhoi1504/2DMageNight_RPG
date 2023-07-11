@@ -605,6 +605,7 @@ MonoBehaviour:
   thisLoop: {fileID: 11400000, guid: 182c2187fb137c345af9044d25b49e6b, type: 2}
   _ani: {fileID: 0}
   textName: {fileID: 7683624245796548186}
+  textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
 --- !u!61 &7959404138750588686
 BoxCollider2D:
   m_ObjectHideFlags: 0

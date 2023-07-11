@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aee59ea6c798834f8891e4e2b629834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   playerInventory: {fileID: 11400000, guid: dfeb264ae44fee948bde9cedf3474484, type: 2}
   thisItem: {fileID: 11400000, guid: 5e6185d6664313e469e40c8b0f22550e, type: 2}
 --- !u!61 &1659230155316778753

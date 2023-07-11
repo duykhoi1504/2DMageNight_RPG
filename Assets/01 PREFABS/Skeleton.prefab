@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 7965858591038065342}
   - component: {fileID: 7965858591038065340}
   - component: {fileID: 7965858591038065339}
+  - component: {fileID: 976506326}
   m_Layer: 7
   m_Name: AniEnemy
   m_TagString: Untagged
@@ -214,6 +215,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aniBase: {fileID: 0}
+--- !u!61 &976506326
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965858591038065313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2.6666667}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.6666667}
+  m_EdgeRadius: 0
 --- !u!1 &7965858591887106299
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,10 +641,11 @@ MonoBehaviour:
   distance: 0
   rigi: {fileID: 0}
   target: {fileID: 0}
-  deadEffect: {fileID: 5267493409132897480, guid: 3b9d5ae7c327eee4c93effb17bf8658b, type: 3}
+  deadEffect: {fileID: 4501651294761526583, guid: 2b2f14a4395c047458aee2a4039b4178, type: 3}
   thisLoop: {fileID: 11400000, guid: 182c2187fb137c345af9044d25b49e6b, type: 2}
   _ani: {fileID: 0}
   textName: {fileID: 6684644273160244540}
+  textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
 --- !u!61 &7965858592883677864
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -17,3 +17,7 @@ MonoBehaviour:
     lootChange: 50
   - thisLoop: {fileID: 4222636678442505121, guid: f3fdf22b9a4864f40b5c64f4e38166d5, type: 3}
     lootChange: 25
+  - thisLoop: {fileID: 1659230155316778752, guid: c7f1c07accbf4ec478801163fe341cfd, type: 3}
+    lootChange: 15
+  - thisLoop: {fileID: 1625859353650445111, guid: e3cbd05a52433b84cac8a53404fbc8bf, type: 3}
+    lootChange: 5
