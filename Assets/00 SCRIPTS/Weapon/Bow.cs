@@ -10,7 +10,7 @@ public class Bow :ObjectPoolingX<Bow>
     //[SerializeField] float _timeReload;
     float timeCount = 0;
     bool isImmute;
-    [SerializeField] List<GameObject> _poolObjects2 = new List<GameObject>();
+    //[SerializeField] List<GameObject> _poolObjects2 = new List<GameObject>();
     void Start()
     {
     }

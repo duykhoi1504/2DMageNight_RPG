@@ -35,7 +35,7 @@ public class EnemyBase :MonoBehaviour
     [SerializeField ] AniBase _ani;
     protected Vector3 movement;
     [SerializeField] Text textName;
-   
+    [SerializeField] GameObject textPoup;
     public float Health { get => health; set => health = value; }
     public float Damage { get => damage; set => damage = value; }
     public float Speed { get => speed; set => speed = value; }
@@ -85,11 +85,16 @@ public class EnemyBase :MonoBehaviour
             EnemyState = state;
         }
     }
-
+    public void FloatText()
+    {
+        GameObject g2 = Instantiate(textPoup, this.transform.position, Quaternion.identity);
+        g2.transform.rotation = Quaternion.identity;
+        g2.transform.position = this.transform.position;
+    }
     public void TakeDamage(float damage)
     {
         health -= damage;
-        
+        FloatText();
         if (health <= 0)
         {
 

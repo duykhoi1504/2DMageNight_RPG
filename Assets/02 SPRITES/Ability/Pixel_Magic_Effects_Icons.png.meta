@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4a62acd6293fea419a8447619eba426
+guid: fbf2777bcb06d3f4d8c5dc99e5ae9c1c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbad0b733dd9eab489f2e527cb0153d8
-      internalID: -1992474648
+      spriteID: c7c301ad5a4f24b4483f0db7782d3c8a
+      internalID: -1115186022
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53b7b4e59f388a748b80750511062e73
-      internalID: -1481570495
+      spriteID: 3b921fb8f956aff49a0e91882cb43d16
+      internalID: 568821135
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2190fabc13a02b44af82b436b9edcd4
-      internalID: 821251233
+      spriteID: 7905aab79cce14f4c9c5ea714cc0285a
+      internalID: 1856571498
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b7dadcc6b029d945a423176d9fd47ba
-      internalID: -1912073974
+      spriteID: 77a21135137468e4bae2cdb862b740e6
+      internalID: -1857462109
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c15bc4e67a744584990c508ba5140583
-      internalID: 1222560516
+      spriteID: 8e4c2710362da2548ac8bfa25b4dabf5
+      internalID: -69742610
       vertices: []
       indices: 
       edges: []
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf525f14e161953498173c9395082a4c
-      internalID: 1977051149
+      spriteID: a0425b8727c26864c9941948a66a385e
+      internalID: -552233258
       vertices: []
       indices: 
       edges: []
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ddb3359714adcb48ab79843524eee56
-      internalID: 1347576523
+      spriteID: d6d6089db8e4c64428238d0ecb971cf8
+      internalID: -1361946236
       vertices: []
       indices: 
       edges: []
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95a476de022a46048874f6ed96b7a273
-      internalID: -1902925252
+      spriteID: 54a52d354d9980d4cabbee3a3ea1d9f1
+      internalID: 1319023546
       vertices: []
       indices: 
       edges: []
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7065f3c361a85a64e979156f55e34210
-      internalID: 1468229342
+      spriteID: 9f91254b10ad34b458fa6ae9f967397d
+      internalID: -2126649854
       vertices: []
       indices: 
       edges: []
@@ -308,8 +308,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 511c4adadd214564f81ae3a51e7526d5
-      internalID: 1738039894
+      spriteID: 09c1da9aa4e48c447a1459655af7e989
+      internalID: -248939436
       vertices: []
       indices: 
       edges: []
@@ -325,16 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixel_Magic_Effects_Icons_1: -1481570495
-      Pixel_Magic_Effects_Icons_6: 1347576523
-      Pixel_Magic_Effects_Icons_5: 1977051149
-      Pixel_Magic_Effects_Icons_3: -1912073974
-      Pixel_Magic_Effects_Icons_4: 1222560516
-      Pixel_Magic_Effects_Icons_9: 1738039894
-      Pixel_Magic_Effects_Icons_0: -1992474648
-      Pixel_Magic_Effects_Icons_8: 1468229342
-      Pixel_Magic_Effects_Icons_7: -1902925252
-      Pixel_Magic_Effects_Icons_2: 821251233
+      Pixel_Magic_Effects_Icons_1: 568821135
+      Pixel_Magic_Effects_Icons_6: -1361946236
+      Pixel_Magic_Effects_Icons_5: -552233258
+      Pixel_Magic_Effects_Icons_3: -1857462109
+      Pixel_Magic_Effects_Icons_4: -69742610
+      Pixel_Magic_Effects_Icons_9: -248939436
+      Pixel_Magic_Effects_Icons_0: -1115186022
+      Pixel_Magic_Effects_Icons_8: -2126649854
+      Pixel_Magic_Effects_Icons_7: 1319023546
+      Pixel_Magic_Effects_Icons_2: 1856571498
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

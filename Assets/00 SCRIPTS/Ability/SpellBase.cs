@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class SpellBase : MonoBehaviour
 {
-    // Start is called before the first frame update
     Rigidbody2D rig;
     [SerializeField] float _speed;
-    float _countTime ;
-    [SerializeField] float _maxTime ;
+    float _countTime;
+    [SerializeField] float _maxTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +15,19 @@ public class Bullet : MonoBehaviour
         _countTime = _maxTime;
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
-        rig.velocity = this.transform.up * _speed;
-    
+        Fire();
+    }
+    public void Fire()
+    {
+        Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouse.z = 0;
+        Vector2 dir = ((Vector2)mouse - (Vector2)transform.position).normalized;
+        
+        rig.velocity = dir* _speed;
+
         _countTime -= Time.deltaTime;
 
         if (_countTime < 0)
@@ -31,16 +36,5 @@ public class Bullet : MonoBehaviour
             _countTime = _maxTime;
         }
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            this.gameObject.SetActive(false);
-            //collision.gameObject.SetActive(false);
-        }
-    }
-   
-
+  
 }

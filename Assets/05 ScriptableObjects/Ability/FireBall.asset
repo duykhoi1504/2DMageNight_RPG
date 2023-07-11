@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6a6abffd96f7a4eb95d78b28eda90c, type: 3}
-  m_Name: PLayerData
+  m_Script: {fileID: 11500000, guid: 4c008cd87ce26464f87e6692e2157e36, type: 3}
+  m_Name: FireBall
   m_EditorClassIdentifier: 
-  Health: 8
-  speed: 3
-  delayWeapon: 0.3
-  thrust: 3
-  knockTime: 0.3
-  damage: 2
-  mana: 10
+  name: 
+  coolDownTime: 0
+  activeTime: 0
+  bullet: {fileID: 0}

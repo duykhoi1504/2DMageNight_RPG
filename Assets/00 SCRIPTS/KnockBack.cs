@@ -10,6 +10,9 @@ public class KnockBack : MonoBehaviour
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
     [SerializeField] float damage;
+
+    public float Damage { get => damage; set => damage = value; }
+
     //[SerializeField] Enemy_State currentState;
     void Start()
     {
@@ -42,7 +45,7 @@ public class KnockBack : MonoBehaviour
                     //currentState = Enemy_State.Stagger;
                    
 
-                        other.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
+                        other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
                         other.gameObject.GetComponent<EnemyBase>().Knock( knockTime);
                     
                 }
@@ -51,7 +54,7 @@ public class KnockBack : MonoBehaviour
               
 
                     //Debug.LogError(other.gameObject.name);
-                    other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+                    other.gameObject.GetComponent<PlayerController>().TakeDamage(Damage);
                     other.gameObject.GetComponent<PlayerController>().Knock(knockTime);
                 }
 

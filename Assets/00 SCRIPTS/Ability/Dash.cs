@@ -11,10 +11,14 @@ public class Dash : AbilityBase
 
     public override void Activate(GameObject parent)
     {
-       
-         
+
+
         //Rigidbody2D rigi= PlayerController.Instant.gameObject.GetComponent<Rigidbody2D>();
         //rigi.velocity = PlayerController.Instant.Movement * dashVelocity;
+        if (PlayerController.Instant.mana <= 0) return;
+        PlayerController.Instant.TriggerCollider.enabled= false;
+        PlayerController.Instant.Collider1.enabled = false;
+
         PlayerController.Instant.Speed= dashVelocity;
         PlayerController.Instant.mana -= 2f;
 
@@ -23,5 +27,7 @@ public class Dash : AbilityBase
     {
 
         PlayerController.Instant.Speed = PlayerController.Instant.NormalSpeed;
+        PlayerController.Instant.TriggerCollider.enabled = true;
+        PlayerController.Instant.Collider1.enabled = true;
     }
 }

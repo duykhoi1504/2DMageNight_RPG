@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public enum Player_State
@@ -22,7 +23,7 @@ public class PlayerController : Singleton<PlayerController>
     public float health;
     public float mana;
     float normalSpeed;
-
+    float timeCount=0;
 
 
     //private float weapon1 = 1;
@@ -41,11 +42,13 @@ public class PlayerController : Singleton<PlayerController>
     Rigidbody2D rigi;
     Vector3 movement;
     [SerializeField] SpriteRenderer mySprite;
-
+    [SerializeField] GameObject textPoup;
     public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
     public Vector3 Movement { get => movement; set => movement = value; }
     public float Speed { get => speed; set => speed = value; }
     public float NormalSpeed { get => normalSpeed; set => normalSpeed = value; }
+    public Collider2D TriggerCollider { get => triggerCollider; set => triggerCollider = value; }
+    public Collider2D Collider1 { get => Collider; set => Collider = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,14 @@ public class PlayerController : Singleton<PlayerController>
     void Update()
     {
 
+        //reload mana
+        timeCount += Time.deltaTime;
+        if(timeCount>2)
+        {
+            if (mana >= PlayerData.mana) return;
+            mana += 1f;
+            timeCount=0;
+        }
         //cách 1
         //rigi.velocity = new Vector2(
         //    Input.GetAxisRaw("Horizontal"),
@@ -99,9 +110,13 @@ public class PlayerController : Singleton<PlayerController>
 
     public void TakeDamage(float damage)
     {
-
+       
         if (health >= 0)
+        {
+            
+          
             health -= damage;
+        }
     }
     public void Knock( float knockTime)
     {

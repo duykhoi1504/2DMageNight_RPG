@@ -17,6 +17,7 @@ public class AbilityManager : MonoBehaviour
     float coolDownTIme;
     float activeTime;
     [SerializeField] KeyCode key;
+      
     void Start()
     {
         AbilityState state = AbilityState.ready;
