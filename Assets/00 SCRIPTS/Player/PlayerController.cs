@@ -22,7 +22,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] FloatValue _HeartManager;
     public float health;
     public float mana;
-    float normalSpeed;
+    [SerializeField]float normalSpeed;
     float timeCount=0;
 
 
@@ -66,13 +66,7 @@ public class PlayerController : Singleton<PlayerController>
     {
 
         //reload mana
-        timeCount += Time.deltaTime;
-        if(timeCount>2)
-        {
-            if (mana >= PlayerData.mana) return;
-            mana += 1f;
-            timeCount=0;
-        }
+       
         //cách 1
         //rigi.velocity = new Vector2(
         //    Input.GetAxisRaw("Horizontal"),
@@ -87,8 +81,8 @@ public class PlayerController : Singleton<PlayerController>
 
         if (PlayerState == Player_State.Stagger) return;
         rigi.velocity = movement * speed;
-       
 
+        
         if (Movement != Vector3.zero && PlayerState != Player_State.Stagger)
         {
             PlayerState = Player_State.Walk;
@@ -98,7 +92,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             PlayerState = Player_State.Idle;
         }
-        //dash
+            ReEnegy();
         
     }
 
@@ -106,7 +100,19 @@ public class PlayerController : Singleton<PlayerController>
     ///
     ///
 
-
+    public void ReEnegy()
+    {
+        timeCount += Time.deltaTime;
+        if (timeCount > 2)
+        {
+            if (mana < PlayerData.mana)
+            {
+                mana += 1f;
+               
+            }
+            timeCount = 0f;
+        }
+    }
 
     public void TakeDamage(float damage)
     {
