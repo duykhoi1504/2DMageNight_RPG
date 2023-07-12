@@ -18,8 +18,9 @@ public class Dash : AbilityBase
         if (PlayerController.Instant.mana <= 0) return;
         PlayerController.Instant.TriggerCollider.enabled= false;
         PlayerController.Instant.Collider1.enabled = false;
-
+        AudioManager.Instant.PLaySFX(CONSTANT.roll);
         PlayerController.Instant.Speed= dashVelocity;
+        PlayerController.Instant.StartDustParticle();
         PlayerController.Instant.mana -= 2f;
 
     }

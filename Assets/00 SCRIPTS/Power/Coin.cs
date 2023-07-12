@@ -23,7 +23,8 @@ public class Coin : PowerUp
     {
         if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
-            
+            AudioManager.Instant.PLaySFX(CONSTANT.coin);
+
             _inventory.coin += amoutCoin;
       
 

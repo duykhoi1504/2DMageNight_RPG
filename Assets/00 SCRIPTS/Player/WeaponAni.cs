@@ -24,6 +24,7 @@ public class WeaponAni : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             //PlayerController.Instant.PlayerState = Player_State.Attack;
+           
 
             attack();
         }
@@ -33,6 +34,8 @@ public class WeaponAni : MonoBehaviour
         if (attackBlocked)
             return;
         animator.SetTrigger("Attack");
+        AudioManager.Instant.PLaySFX(CONSTANT.sword);
+
         isAttacking = true;
         attackBlocked = true;
         StartCoroutine(DelayAttack());

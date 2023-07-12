@@ -28,6 +28,9 @@ public class PhysicalInventoryItem : PowerUp
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            AudioManager.Instant.PLaySFX(CONSTANT.loop);
+
+
             AddItemToInventory();
             Destroy(this.gameObject);
         }

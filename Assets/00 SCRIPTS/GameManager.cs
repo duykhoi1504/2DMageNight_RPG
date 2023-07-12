@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale= 1.0f;
+        //AudioManager.Instant.PlayMusic("VillageTheme");
     }
 
     // Update is called once per frame

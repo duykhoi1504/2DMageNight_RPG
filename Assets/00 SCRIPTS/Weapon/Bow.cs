@@ -40,6 +40,9 @@ public class Bow :ObjectPoolingX<Bow>
             return;
 
         }
+        
+
+
 
         Quaternion newRotation =this.transform.rotation* Quaternion.Euler(0f, 0f, -90f);
 
@@ -50,6 +53,7 @@ public class Bow :ObjectPoolingX<Bow>
         g2.transform.rotation = newRotation;
         g2.transform.position=transform.position;
         g2.SetActive(true);
+        AudioManager.Instant.PLaySFX(CONSTANT.arrow);
         //bullet.SetActive(true);
         timeCount = 0;
     }

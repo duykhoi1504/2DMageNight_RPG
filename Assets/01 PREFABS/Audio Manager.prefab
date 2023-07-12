@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSounds:
+  - name: Theme1
+    clip: {fileID: 8300000, guid: 1be97ddfb6e9da941a9dab98bf27a579, type: 3}
   - name: Theme
     clip: {fileID: 8300000, guid: a8f513a45b333674eb13c8a6112f0888, type: 3}
   - name: VillageTheme
@@ -58,8 +60,28 @@ MonoBehaviour:
   - name: BattleTheme
     clip: {fileID: 8300000, guid: 7a797cb798f25a14893c38676ec0aaa9, type: 3}
   sfxSounds:
-  - name: 
-    clip: {fileID: 0}
+  - name: click
+    clip: {fileID: 8300000, guid: dc9f9fb93bd396a4e8b866e21cf7408b, type: 3}
+  - name: hurt
+    clip: {fileID: 8300000, guid: 3c204b7d4a760cb469640cf0df35d636, type: 3}
+  - name: roll
+    clip: {fileID: 8300000, guid: 7ac96a6601603534dabf612c38a435d9, type: 3}
+  - name: arrow
+    clip: {fileID: 8300000, guid: 4fd91b4f52de8f648a1879c9985e4237, type: 3}
+  - name: chest
+    clip: {fileID: 8300000, guid: 5b6f68b409d0d824481407aa4e08a2cf, type: 3}
+  - name: coin
+    clip: {fileID: 8300000, guid: fe7a643dc08a84949916c4b9ddfdf45f, type: 3}
+  - name: sword
+    clip: {fileID: 8300000, guid: d3ff75a1f99e4f74596c5f020560d501, type: 3}
+  - name: menuClose
+    clip: {fileID: 8300000, guid: dae959105dc1cc141aea327bbd8eea08, type: 3}
+  - name: menuOpen
+    clip: {fileID: 8300000, guid: 2da63c06afe12c442952934f4f58246b, type: 3}
+  - name: enemyDie
+    clip: {fileID: 8300000, guid: d8afc77b1a41c94448c8a299474736c6, type: 3}
+  - name: enemyHurt
+    clip: {fileID: 8300000, guid: 80a643600cebfe240bfbc21265dad4ce, type: 3}
   musicSource: {fileID: 8880994764970544418}
   sfxSource: {fileID: 8880994765210397352}
 --- !u!1 &8880994764970544477
@@ -108,7 +130,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -234,7 +256,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.52
   m_Pitch: 1
   Loop: 0
   Mute: 0

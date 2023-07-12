@@ -37,6 +37,7 @@ public class PlayerAni : MonoBehaviour
     }
     void scaleAniToMouse()
     {
+       
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
         Vector3 dir = ((Vector2)mouse - (Vector2)transform.position).normalized;

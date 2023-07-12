@@ -16,6 +16,7 @@ public class RoomMove : MonoBehaviour
     [SerializeField] string placeName;
     [SerializeField] GameObject text;
     [SerializeField] Text placeText;
+    [SerializeField] string  nameSong;
     void Start()
     {
         cam= Camera.main.GetComponent<CameraController>();
@@ -30,6 +31,7 @@ public class RoomMove : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.Instant.PlayMusic(nameSong);
             cam._minPos = cameraChangeMin;
             cam._maxPos = cameraChangeMax;
             other.transform.position += playerChange;

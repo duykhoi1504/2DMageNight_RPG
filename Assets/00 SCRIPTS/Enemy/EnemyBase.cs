@@ -115,6 +115,7 @@ public class EnemyBase :MonoBehaviour
     {
         if (deadEffect != null)
         {
+            AudioManager.Instant.PLaySFX(CONSTANT.enemyDie);
             GameObject effect = Instantiate(deadEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
         }

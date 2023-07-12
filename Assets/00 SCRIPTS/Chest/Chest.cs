@@ -26,7 +26,9 @@ public class Chest : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F) && playerInrange)
         {
-            if(!isOpen)
+            AudioManager.Instant.PLaySFX(CONSTANT.chest);
+
+            if (!isOpen)
             {
                 OpenChest();
             }

@@ -15,6 +15,8 @@ public class PlayerController : Singleton<PlayerController>
 {
     [Header("PlayerState")]
     public Player_State PlayerState;
+    [Header("particle System")]
+    [SerializeField] ParticleSystem dust;
 
     [Header("ProfilePlayer")]
     [SerializeField] float speed ;
@@ -43,6 +45,8 @@ public class PlayerController : Singleton<PlayerController>
     Vector3 movement;
     [SerializeField] SpriteRenderer mySprite;
     [SerializeField] GameObject textPoup;
+    [SerializeField] VectorValue startPlayerPos;
+    ////////////////////////////////////////////////
     public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
     public Vector3 Movement { get => movement; set => movement = value; }
     public float Speed { get => speed; set => speed = value; }
@@ -50,10 +54,12 @@ public class PlayerController : Singleton<PlayerController>
     public Collider2D TriggerCollider { get => triggerCollider; set => triggerCollider = value; }
     public Collider2D Collider1 { get => Collider; set => Collider = value; }
 
-    // Start is called before the first frame update
+  
     void Start()
     {
-        normalSpeed= PlayerData.speed;
+        this.transform.position = startPlayerPos.posValue;
+
+        normalSpeed = PlayerData.speed;
          speed = normalSpeed;
         health = PlayerData.Health;
         mana = PlayerData.mana;
@@ -80,8 +86,9 @@ public class PlayerController : Singleton<PlayerController>
         movement.y = Input.GetAxisRaw("Vertical");
 
         if (PlayerState == Player_State.Stagger) return;
-        rigi.velocity = movement * speed;
 
+        rigi.velocity = movement * speed;
+        
         
         if (Movement != Vector3.zero && PlayerState != Player_State.Stagger)
         {
@@ -99,7 +106,10 @@ public class PlayerController : Singleton<PlayerController>
   
     ///
     ///
-
+    public void StartDustParticle()
+    {
+        dust.Play(); 
+    }
     public void ReEnegy()
     {
         timeCount += Time.deltaTime;

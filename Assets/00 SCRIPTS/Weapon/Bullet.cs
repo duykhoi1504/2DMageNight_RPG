@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rig = this.GetComponent<Rigidbody2D>();
         _countTime = _maxTime;
     }
@@ -21,10 +22,11 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         rig.velocity = this.transform.up * _speed;
     
         _countTime -= Time.deltaTime;
-
+       
         if (_countTime < 0)
         {
             this.gameObject.SetActive(false);

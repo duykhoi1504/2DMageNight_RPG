@@ -15,7 +15,7 @@ public class AudioManager :MonoBehaviour
         if(Instant == null)
         {
             Instant = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

@@ -1004,7 +1004,7 @@ TextureImporter:
       Hearts_31: 1504854902
       Hearts_4: -1062108204
       Hearts_25: 1306726434
-      Hearts_32: -1032100134
+      Hearts_24: -978192473
       Hearts_13: -1578517772
       Hearts_29: -416733778
       Hearts_14: -1792366627
@@ -1037,8 +1037,8 @@ TextureImporter:
       Hearts_5: -1062627154
       Hearts_26: -1640284657
       Hearts_38: 1044492281
+      Hearts_32: -1032100134
       Hearts_10: -1572593067
-      Hearts_24: -978192473
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -15,13 +15,15 @@ public class MenuInGame : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-
+            AudioManager.Instant.PLaySFX(CONSTANT.menuOpen);
             menu.SetActive(true);
             Time.timeScale = 0;
          
         }
         if (Input.GetKey(KeyCode.Tab))
         {
+            AudioManager.Instant.PLaySFX(CONSTANT.menuOpen);
+
             Time.timeScale = 0;
             //Animator imageAnimator= inventory.GetComponentInChildren<Animator>();
             //imageAnimator.enabled = true;
@@ -35,11 +37,14 @@ public class MenuInGame : MonoBehaviour
     }
     public void PauseGame()
     {
+
         Time.timeScale = 0;
     }
 
     public void Resume()
     {
+        AudioManager.Instant.PLaySFX(CONSTANT.menuClose);
+
         Time.timeScale = 1;
         menu.SetActive(false);
 
@@ -50,11 +55,14 @@ public class MenuInGame : MonoBehaviour
     }
     public void CloseSetting()
     {
-        
+        AudioManager.Instant.PLaySFX(CONSTANT.menuClose);
+
         setting.SetActive(false);
     }
     public void CloseInventory()
     {
+        AudioManager.Instant.PLaySFX(CONSTANT.menuClose);
+
         Time.timeScale = 1;
 
         inventory.SetActive(false);

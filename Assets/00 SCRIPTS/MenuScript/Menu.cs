@@ -9,11 +9,13 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject about;
     [SerializeField] GameObject setting;
-    
+    [SerializeField] VectorValue playerStorage;
+    [SerializeField] Vector2 playerPos;
 
     // Start is called before the first frame update
     public void NewGame()
     {
+        playerStorage.posValue= playerPos;
         SceneManager.LoadScene("MAIN");
     }
     public void QuitGame()

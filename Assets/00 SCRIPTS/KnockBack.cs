@@ -44,7 +44,7 @@ public class KnockBack : MonoBehaviour
 
                     //CameraController.Instant.BeginKick();
                     //currentState = Enemy_State.Stagger;
-                   
+                    AudioManager.Instant.PLaySFX(CONSTANT.enemyHurt);
 
                         other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
                     FloatText(Color.white, other.gameObject);
@@ -54,6 +54,7 @@ public class KnockBack : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("Player") )
                 {
+
               
 
                     //Debug.LogError(other.gameObject.name);
