@@ -6329,39 +6329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d75f230dd56f184087bdcb87c5f3ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityImage: {fileID: 2098831434}
-  coolDown: 2
-  ability: 304
---- !u!114 &1446990211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446990205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d75f230dd56f184087bdcb87c5f3ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityImage: {fileID: 604344510}
-  coolDown: 0.2
-  ability: 51
---- !u!114 &1446990212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446990205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d75f230dd56f184087bdcb87c5f3ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityImage: {fileID: 1786916144}
-  coolDown: 5
-  ability: 49
+  abilityList:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!19719996 &1449942136 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 5361250959219357819, guid: 21ea9e8ee178ffa42bc2d9df5ac074f9, type: 3}

@@ -3,37 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[System.Serializable]
+public class AbilityUI 
+{
+    public AbilityBase _ability;
+    public Image _imageAbility;
+}
+
 public class Abilities : MonoBehaviour
 {
-    // Start is called before the first frame update
     [Header("Ability")]
-    public Image abilityImage;
-    public float coolDown = 5;
+    public  AbilityUI[] abilityList;
+     float coolDown ;
     bool isCoolDown = false;
-    public KeyCode ability;
+
+
+
+    KeyCode keyCodeTemp;
+    int tempIndex;
+
     void Start()
     {
-        abilityImage.fillAmount = 0;
+        foreach (AbilityUI _ui in abilityList)       {
+            _ui._imageAbility.fillAmount = 0;
+        }
+        //abilityImage.fillAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Ability();
-    }   
-    void Ability()
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            keyCodeTemp = KeyCode.LeftShift;
+            tempIndex= 0;
+        
+        }
+        else if (Input.GetKeyDown(KeyCode.V))
+        {
+            keyCodeTemp = KeyCode.V;
+            tempIndex = 1;
+            
+        }
+        Ability(keyCodeTemp, tempIndex);
+    }
+ 
+    void Ability(KeyCode ability, int index)
     {
-        if(Input.GetKey(ability)&& isCoolDown==false)
+        coolDown = abilityList[index]._ability.coolDownTime;
+        if (Input.GetKey(ability)&& isCoolDown==false)
         {
             isCoolDown = true;
-            abilityImage.fillAmount = 1;
+            abilityList[index]._imageAbility.fillAmount = 1;
         }
         if (isCoolDown)
         {
-            abilityImage.fillAmount -= 1 / coolDown * Time.deltaTime;
-            if(abilityImage.fillAmount<= 0 )
+            abilityList[index]._imageAbility.fillAmount -= 1 / coolDown * Time.deltaTime;
+            if(abilityList[index]._imageAbility.fillAmount<= 0 )
             {
-                abilityImage.fillAmount = 0;
+                abilityList[index]._imageAbility.fillAmount = 0;
                 isCoolDown= false;
             }
         }
