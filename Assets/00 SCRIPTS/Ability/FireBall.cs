@@ -11,7 +11,8 @@ public class FireBall : AbilityBase
 {
     
     [SerializeField] GameObject bullet;
-    [SerializeField] float speedSpell;
+    //[SerializeField] float speedSpell;
+   
     // Start is called before the first frame update
  
     public override void Activate(GameObject parent)

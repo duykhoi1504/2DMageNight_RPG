@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7086618013473006652}
   - component: {fileID: 3220453042559202025}
   - component: {fileID: -717895032294086707}
-  - component: {fileID: -8334837014211338945}
   - component: {fileID: 5502611199913613881}
+  - component: {fileID: 1703141558}
   m_Layer: 8
   m_Name: FireBall
   m_TagString: Untagged
@@ -156,19 +156,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8334837014211338945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086618013473006653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5fcca9d92e6e14ba2ac39fe13541c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &5502611199913613881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +172,17 @@ MonoBehaviour:
   knockTime: 0
   damage: 2
   textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
+--- !u!114 &1703141558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086618013473006653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5fcca9d92e6e14ba2ac39fe13541c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  effect: {fileID: 4501651294761526583, guid: 2b2f14a4395c047458aee2a4039b4178, type: 3}

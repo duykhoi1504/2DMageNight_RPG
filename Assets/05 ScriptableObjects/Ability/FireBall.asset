@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c008cd87ce26464f87e6692e2157e36, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  name: 
-  coolDownTime: 0
-  activeTime: 0
-  bullet: {fileID: 0}
+  name: FireBall
+  coolDownTime: 0.2
+  activeTime: 0.2
+  bullet: {fileID: 7086618013473006653, guid: b9a6339c8da7afa4b893ccc3bdfadc10, type: 3}
+  speedSpell: 6
