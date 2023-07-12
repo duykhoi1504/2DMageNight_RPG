@@ -24,9 +24,10 @@ public class Heart : PowerUp
     {
         if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
-            AudioManager.Instant.PLaySFX(CONSTANT.loop);
+           
 
             if (currentHealth == _playerData.Health) return;
+            AudioManager.Instant.PLaySFX(CONSTANT.loop);
             PlayerController.Instant.health += _amoutHeart;
             this.gameObject.SetActive(false);
            

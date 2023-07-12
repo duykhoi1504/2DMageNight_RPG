@@ -7,14 +7,15 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody2D rig;
     [SerializeField] float _speed;
-    float _countTime ;
-    [SerializeField] float _maxTime ;
+    float _countTime;
+    [SerializeField] float _maxTime;
     // Start is called before the first frame update
     void Start()
     {
         
         rig = this.GetComponent<Rigidbody2D>();
         _countTime = _maxTime;
+
     }
 
 
@@ -23,10 +24,11 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         
+
         rig.velocity = this.transform.up * _speed;
-    
+
         _countTime -= Time.deltaTime;
-       
+
         if (_countTime < 0)
         {
             this.gameObject.SetActive(false);
