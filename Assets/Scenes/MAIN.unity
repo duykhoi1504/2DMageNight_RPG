@@ -6330,8 +6330,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityList:
-  - {fileID: 0}
-  - {fileID: 0}
+  - _ability: {fileID: 11400000, guid: 711a3248b7183c4439817bb2fa1dec74, type: 2}
+    _imageAbility: {fileID: 2098831434}
+  - _ability: {fileID: 11400000, guid: 4571f2c02683d894e918e3756029e6e2, type: 2}
+    _imageAbility: {fileID: 604344510}
+  - _ability: {fileID: 0}
+    _imageAbility: {fileID: 1786916144}
 --- !u!19719996 &1449942136 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: 5361250959219357819, guid: 21ea9e8ee178ffa42bc2d9df5ac074f9, type: 3}
@@ -6653,6 +6657,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636673909}
   m_CullTransparentMesh: 1
+--- !u!1001 &1703145756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744817, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197981235263744818, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
+      propertyPath: m_Name
+      value: Thunder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b40218f36043784f9fc14849b11572f, type: 3}
 --- !u!1001 &1721496170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8033,7 +8094,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 00f4f5e8199ce354a82845f09285d433, type: 2}
     - target: {fileID: 8342906813633391778, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: abilities.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8342906813633391778, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
       propertyPath: abilities.Array.data[0]
@@ -8043,6 +8104,10 @@ PrefabInstance:
       propertyPath: abilities.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 4571f2c02683d894e918e3756029e6e2, type: 2}
+    - target: {fileID: 8342906813633391778, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
+      propertyPath: abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f4b292cb3801bb4caa0692adaef00cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14de0f0d4f50aed4eb1ec3e84c650f79, type: 3}
 --- !u!1001 &737811814047629753

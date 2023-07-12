@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c008cd87ce26464f87e6692e2157e36, type: 3}
-  m_Name: FireBall
+  m_Script: {fileID: 11500000, guid: 5efcbec3e0f2d2d4e87e76770b1e4e9c, type: 3}
+  m_Name: Thunder
   m_EditorClassIdentifier: 
-  name: FireBall
-  coolDownTime: 2
+  name: Thunder
+  coolDownTime: 3
   activeTime: 0.07
-  bullet: {fileID: 7086618013473006653, guid: b9a6339c8da7afa4b893ccc3bdfadc10, type: 3}
+  thunder: {fileID: 9197981235263744818, guid: 0b40218f36043784f9fc14849b11572f, type: 3}

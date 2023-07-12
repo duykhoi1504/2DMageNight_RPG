@@ -43,6 +43,12 @@ public class AbilityManager : MonoBehaviour
             SetCurrentAbility(1);
             keyTemp = KeyCode.V;
         }
+        else if (Input.GetKey(KeyCode.B))
+        {
+            // Chuyển sang khả năng thứ hai trong danh sách
+            SetCurrentAbility(2);
+            keyTemp = KeyCode.B;
+        }
         ActivateAbility(currentAbility, keyTemp);
 
     }
@@ -69,7 +75,7 @@ public class AbilityManager : MonoBehaviour
                 {
                     abi.BeginCoolDown(gameObject);
                     state = AbilityState.cooldown;
-                    coolDownTIme = abi.coolDownTime;
+                    coolDownTIme = abi.coolDownTime;    
                 }
                 break;
             case AbilityState.cooldown:
