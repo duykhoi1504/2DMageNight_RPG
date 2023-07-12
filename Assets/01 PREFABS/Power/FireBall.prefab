@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2
   knockTime: 0
-  damage: 2
+  damage: 3
   textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
 --- !u!114 &1703141558
 MonoBehaviour:

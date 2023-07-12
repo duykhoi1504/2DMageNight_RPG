@@ -13,6 +13,8 @@ public class Thunder : AbilityBase
 
     public override void Activate(GameObject parent)
     {
+        if(PlayerController.Instant.mana<=0)return;
+        PlayerController.Instant.mana -= 10f;
 
         AudioManager.Instant.PLaySFX(CONSTANT.thunder);
         GameObject fireball = Instantiate(thunder, parent.transform.position, Quaternion.identity);

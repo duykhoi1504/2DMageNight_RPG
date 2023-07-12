@@ -10,7 +10,8 @@ public class KnockBack : MonoBehaviour
     [SerializeField] float thrust;
     [SerializeField] float knockTime;
     [SerializeField] float damage;
-    [SerializeField] GameObject textPoup;
+    //TextPoupManger textPoup;
+    //[SerializeField] GameObject textPoup;
 
     public float Damage { get => damage; set => damage = value; }
 
@@ -47,7 +48,8 @@ public class KnockBack : MonoBehaviour
                     AudioManager.Instant.PLaySFX(CONSTANT.enemyHurt);
 
                         other.gameObject.GetComponent<EnemyBase>().TakeDamage(Damage);
-                    FloatText(Color.white, other.gameObject);
+                    TextPoupManger.Instant.gameObject.GetComponent<TextPoupManger>().getTextPoup(other.gameObject, damage, Color.white);
+                    //FloatText(Color.white, other.gameObject);
 
                     other.gameObject.GetComponent<EnemyBase>().Knock( knockTime);
                     
@@ -59,7 +61,9 @@ public class KnockBack : MonoBehaviour
 
                     //Debug.LogError(other.gameObject.name);
                     other.gameObject.GetComponent<PlayerController>().TakeDamage(Damage);
-                     FloatText(Color.red,other.gameObject);
+                    TextPoupManger.Instant.gameObject.GetComponent<TextPoupManger>().getTextPoup(other.gameObject, damage, Color.red);
+
+                    //FloatText(Color.red,other.gameObject);
                     other.gameObject.GetComponent<PlayerController>().Knock(knockTime);
                 }
 
@@ -67,15 +71,16 @@ public class KnockBack : MonoBehaviour
             }
         }
     }
-    public void FloatText(Color color,GameObject thisGO)
-    {
+    //public void FloatText()
+    //{
 
-        GameObject g2 = Instantiate(textPoup, this.transform.position, Quaternion.identity);
-        g2.GetComponent<TextMesh>().text = "-"+damage.ToString();
-        g2.GetComponent<TextMesh>().color = color;
 
-        g2.transform.rotation = thisGO.transform.rotation;
-        g2.transform.position = thisGO.transform.position;
-    }
+        //GameObject g2 = Instantiate(textPoup, this.transform.position, Quaternion.identity);
+        //g2.GetComponent<TextMesh>().text = "-"+damage.ToString();
+        //g2.GetComponent<TextMesh>().color = color;
+
+        //g2.transform.rotation = thisGO.transform.rotation;
+        //g2.transform.position = thisGO.transform.position;
+    //}
 
 }

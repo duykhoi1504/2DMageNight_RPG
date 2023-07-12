@@ -54,7 +54,7 @@ public class Bow :ObjectPoolingX<Bow>
         g2.transform.position=transform.position;
         g2.SetActive(true);
         AudioManager.Instant.PLaySFX(CONSTANT.arrow);
-        //bullet.SetActive(true);
+        bullet.SetActive(true);
         timeCount = 0;
     }
 

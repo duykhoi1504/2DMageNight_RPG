@@ -10,7 +10,7 @@ public class TextPoup : MonoBehaviour
     void Start()
     {
         
-       this.transform.localPosition+=new Vector3(0f, 1f, 0f);
+       //this.transform.localPosition+=new Vector3(0f, 1f, 0f);
         
         //Destroy(gameObject,2f);
 
@@ -19,7 +19,10 @@ public class TextPoup : MonoBehaviour
     {
         timeCount += Time.deltaTime;
         if (timeCount > 2f)
+        {
             this.gameObject.SetActive(false);
+            timeCount = 0;
+        }
     }
 
 

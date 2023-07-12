@@ -44,7 +44,7 @@ public class PlayerController : Singleton<PlayerController>
     Rigidbody2D rigi;
     Vector3 movement;
     [SerializeField] SpriteRenderer mySprite;
-    [SerializeField] GameObject textPoup;
+   
     [SerializeField] VectorValue startPlayerPos;
     ////////////////////////////////////////////////
     public PlayerData PlayerData { get => _playerData; set => _playerData = value; }

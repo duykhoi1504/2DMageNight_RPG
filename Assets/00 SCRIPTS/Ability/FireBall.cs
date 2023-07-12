@@ -17,7 +17,8 @@ public class FireBall : AbilityBase
  
     public override void Activate(GameObject parent)
     {
-
+        if (PlayerController.Instant.mana <= 0) return;
+        PlayerController.Instant.mana -= 2f;
         Vector2 player = PlayerController.Instant.transform.position;
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = 0;
