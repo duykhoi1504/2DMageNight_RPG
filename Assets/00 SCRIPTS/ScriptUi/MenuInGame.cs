@@ -13,14 +13,14 @@ public class MenuInGame : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             AudioManager.Instant.PLaySFX(CONSTANT.menuOpen);
             menu.SetActive(true);
             Time.timeScale = 0;
          
         }
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             AudioManager.Instant.PLaySFX(CONSTANT.menuOpen);
 
