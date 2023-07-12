@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Thunder
   m_EditorClassIdentifier: 
   name: Thunder
-  coolDownTime: 3
+  coolDownTime: 0.2
   activeTime: 0.07
   thunder: {fileID: 9197981235263744818, guid: 0b40218f36043784f9fc14849b11572f, type: 3}

@@ -40,11 +40,17 @@ public class Abilities : MonoBehaviour
             tempIndex= 0;
         
         }
-        else if (Input.GetKeyDown(KeyCode.V))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
-            keyCodeTemp = KeyCode.V;
+            keyCodeTemp = KeyCode.E;
             tempIndex = 1;
             
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            keyCodeTemp = KeyCode.R;
+            tempIndex = 2;
+
         }
         Ability(keyCodeTemp, tempIndex);
     }

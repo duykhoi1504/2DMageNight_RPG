@@ -14,7 +14,7 @@ public class Thunder : AbilityBase
     public override void Activate(GameObject parent)
     {
 
-       
+        AudioManager.Instant.PLaySFX(CONSTANT.thunder);
         GameObject fireball = Instantiate(thunder, parent.transform.position, Quaternion.identity);
         fireball.transform.localPosition += new Vector3(0f, 1f, 0f);
         Destroy(fireball,2f);

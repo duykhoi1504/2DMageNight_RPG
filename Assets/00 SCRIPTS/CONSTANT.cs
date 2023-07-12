@@ -10,6 +10,8 @@ public class CONSTANT : MonoBehaviour
     public static string adventureTheme = "AdventureTheme";
     public static string bossTheme = "BossTheme";
     public static string battleTheme = "BattleTheme";
+    public static string gameOver = "GameOver";
+
     //sfx sounds
     public static string click = "click";
     public static string hurt = "hurt";
@@ -23,6 +25,8 @@ public class CONSTANT : MonoBehaviour
     public static string enemyDie = "enemyDie";
     public static string enemyHurt = "enemyHurt";
     public static string loop = "loop";
+    public static string thunder = "thunder";
+
 
 
 }

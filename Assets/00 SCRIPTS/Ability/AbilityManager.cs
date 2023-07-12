@@ -37,17 +37,17 @@ public class AbilityManager : MonoBehaviour
             SetCurrentAbility(0);
             keyTemp = KeyCode.LeftShift;
         }
-        else if (Input.GetKey(KeyCode.V))
+        else if (Input.GetKey(KeyCode.E))
         {
             // Chuyển sang khả năng thứ hai trong danh sách
             SetCurrentAbility(1);
-            keyTemp = KeyCode.V;
+            keyTemp = KeyCode.E;
         }
-        else if (Input.GetKey(KeyCode.B))
+        else if (Input.GetKey(KeyCode.R))
         {
             // Chuyển sang khả năng thứ hai trong danh sách
             SetCurrentAbility(2);
-            keyTemp = KeyCode.B;
+            keyTemp = KeyCode.R;
         }
         ActivateAbility(currentAbility, keyTemp);
 

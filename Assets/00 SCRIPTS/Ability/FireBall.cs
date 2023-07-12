@@ -24,6 +24,8 @@ public class FireBall : AbilityBase
         Vector2 dir = ((Vector2)mouse - player).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        AudioManager.Instant.PLaySFX(CONSTANT.arrow);
+
         GameObject fireball = Instantiate(bullet, parent.transform.position, Quaternion.identity);
         fireball.transform.position = parent.transform.position;
         fireball.transform.rotation= rotation;
