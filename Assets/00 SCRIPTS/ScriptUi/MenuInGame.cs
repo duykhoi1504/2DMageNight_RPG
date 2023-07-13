@@ -31,11 +31,14 @@ public class MenuInGame : MonoBehaviour
             //imageAnimator.enabled = true;
             inventory.SetActive(true);
         }
-        if (PlayerController.Instant.health <= 0)
+        if (PlayerController.Instant.health <= 0f)
         {
+            PlayerController.Instant.health += 1f;
+
+            AudioManager.Instant.PlayMusic(CONSTANT.gameOver);
+
             playerPos.posValue= PlayerController.Instant.transform.position;
             Time.timeScale = 0;
-            AudioManager.Instant.PlayMusic(CONSTANT.gameOver);
             respawn.SetActive(true);
            
         }
@@ -79,12 +82,14 @@ public class MenuInGame : MonoBehaviour
     }
     public void ReSpawn()
     {
-        //PlayerController.Instant.statusDefault();
+        respawn.SetActive(false);
+        PlayerController.Instant.statusDefault();
         PlayerController.Instant.transform.position=playerPos.posValue;
         Time.timeScale = 1;
-        
-        
-        respawn.SetActive(false);
+        AudioManager.Instant.PlayMusic(CONSTANT.theme);
+
+
+       
 
     }
 
