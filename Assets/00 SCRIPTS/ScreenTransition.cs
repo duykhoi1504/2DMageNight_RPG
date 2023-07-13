@@ -10,6 +10,8 @@ public class ScreenTransition : MonoBehaviour
     public string sceneToLoad;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
+
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -18,4 +20,5 @@ public class ScreenTransition : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
         }
     }
+
 }

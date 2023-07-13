@@ -78,6 +78,8 @@ public class MenuInGame : MonoBehaviour
     }
     public void BackToMenu()
     {
+        AudioManager.Instant.PlayMusic(CONSTANT.theme);
+
         SceneManager.LoadScene("MENU");
     }
     public void ReSpawn()

@@ -194,7 +194,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "W A S D to controll\n \r\n"
+  m_Text: "W A S D to controll\n1 - sword \\ 2 - bow\nz - cancel and start sword
+    & bow\nshift - E - R to abilities\n \r\n"
 --- !u!222 &6322065
 CanvasRenderer:
   m_ObjectHideFlags: 0

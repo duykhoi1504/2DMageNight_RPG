@@ -51,12 +51,12 @@ public class WeaponParent : MonoBehaviour
     }
     void changeWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ChangeRenderer = weaponRenderer;
             bowRenderer.gameObject.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ChangeRenderer = bowRenderer;
             weaponRenderer.gameObject.SetActive(false);
