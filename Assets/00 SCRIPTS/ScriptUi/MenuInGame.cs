@@ -10,7 +10,9 @@ public class MenuInGame : MonoBehaviour
     [SerializeField] GameObject menu;
     [SerializeField] GameObject setting;
     [SerializeField] GameObject inventory;
+    [SerializeField] GameObject respawn;
 
+    [SerializeField] VectorValue playerPos;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,10 +30,14 @@ public class MenuInGame : MonoBehaviour
             //Animator imageAnimator= inventory.GetComponentInChildren<Animator>();
             //imageAnimator.enabled = true;
             inventory.SetActive(true);
-            
-
-         
-
+        }
+        if (PlayerController.Instant.health <= 0)
+        {
+            playerPos.posValue= PlayerController.Instant.transform.position;
+            Time.timeScale = 0;
+            AudioManager.Instant.PlayMusic(CONSTANT.gameOver);
+            respawn.SetActive(true);
+           
         }
 
     }
@@ -71,5 +77,15 @@ public class MenuInGame : MonoBehaviour
     {
         SceneManager.LoadScene("MENU");
     }
-  
+    public void ReSpawn()
+    {
+        //PlayerController.Instant.statusDefault();
+        PlayerController.Instant.transform.position=playerPos.posValue;
+        Time.timeScale = 1;
+        
+        
+        respawn.SetActive(false);
+
+    }
+
 }

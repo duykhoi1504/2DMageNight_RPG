@@ -14,6 +14,7 @@ public class EnemyController : EnemyBase
         movement = rigi.velocity;
         if (Distance <= ChaseRadius && Distance > AttackRadius)
         {
+            
             if (EnemyState == Enemy_State.Idle || EnemyState == Enemy_State.Walk && EnemyState != Enemy_State.Stagger)
             //EnemyState = Enemy_State.Walk;
             {

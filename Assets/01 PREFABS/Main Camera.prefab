@@ -64,7 +64,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 263889
+    m_Bits: 263991
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 6938169872c720a4fa0d9e144cd624cb, type: 2}
   m_TargetDisplay: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 737811815900273261}
   - component: {fileID: 737811815900273258}
   - component: {fileID: 737811815900273263}
+  - component: {fileID: 737811814047629755}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -186,3 +187,23 @@ MonoBehaviour:
   _speed: 3
   _maxPos: {x: 18.61, y: 13.2}
   _minPos: {x: -5.11, y: -4}
+--- !u!95 &737811814047629755
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737811815900273259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9df10872a996de04fb84227d283eb3aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

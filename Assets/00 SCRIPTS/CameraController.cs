@@ -33,7 +33,7 @@ public class CameraController : Singleton<CameraController>
     }
     public IEnumerator KickCo()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         ani.SetBool("Kick_active", false);
 
     }

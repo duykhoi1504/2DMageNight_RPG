@@ -124,6 +124,10 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    public void statusDefault()
+    {
+        health = PlayerData.Health;
+    }
     public void TakeDamage(float damage)
     {
        

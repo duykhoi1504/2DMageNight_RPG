@@ -15,7 +15,7 @@ public class AudioManager :MonoBehaviour
         if(Instant == null)
         {
             Instant = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -32,8 +32,8 @@ public class AudioManager :MonoBehaviour
             button.onClick.AddListener(() => PLaySFX("click"));
         }
 
-        
-        PlayMusic("Theme");
+
+        AudioManager.Instant.PlayMusic(CONSTANT.theme);
     }
     public void PlayMusic(string name)
     {

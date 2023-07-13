@@ -21,7 +21,7 @@ public class Thunder : AbilityBase
 
         AudioManager.Instant.PLaySFX(CONSTANT.thunder);
         GameObject fireball = Instantiate(thunder, parent.transform.position, Quaternion.identity);
-
+        CameraController.Instant.BeginKick();
         fireball.transform.localPosition += new Vector3(0f, 1f, 0f);
         Destroy(fireball,2f);
         CoroutineHandler.Instance.StartCoroutine(SpreadEffectCo(1f));
@@ -36,16 +36,17 @@ public class Thunder : AbilityBase
     IEnumerator SpreadEffectCo(float time)
     {
         yield return new WaitForSeconds(time);
-        Vector3 right = PlayerController.Instant.transform.position + new Vector3(5f, 0f, 0f);
-        Vector3 left = PlayerController.Instant.transform.position + new Vector3(-5f, 0f, 0f);
-        Vector3 down = PlayerController.Instant.transform.position + new Vector3(0f, -5f, 0f);
-        Vector3 top = PlayerController.Instant.transform.position + new Vector3(0f, 5f, 0f);
+        Vector3 right = PlayerController.Instant.transform.position + new Vector3(3f, 0f, 0f);
+        Vector3 left = PlayerController.Instant.transform.position + new Vector3(-3f, 0f, 0f);
+        Vector3 down = PlayerController.Instant.transform.position + new Vector3(0f, -3f, 0f);
+        Vector3 top = PlayerController.Instant.transform.position + new Vector3(0f, 3f, 0f);
         
 
         GameObject fireball1 = Instantiate(thunder, right, Quaternion.identity);
         GameObject fireball2 = Instantiate(thunder, left, Quaternion.identity);
         GameObject fireball3 = Instantiate(thunder, down, Quaternion.identity);
         GameObject fireball4 = Instantiate(thunder, top, Quaternion.identity);
+        CameraController.Instant.BeginKick();
 
         Destroy(fireball1, 2f);
         Destroy(fireball2, 2f);
