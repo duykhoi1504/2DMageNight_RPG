@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1816196715
-  m_SortingLayer: 16
+  m_SortingLayer: 17
   m_SortingOrder: 0
   m_Sprite: {fileID: 128439814, guid: 3df2b507c0cddce418f524b47ae4e57a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,12 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f681b03ecfdb49144a3ad1be90e0a5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contents: {fileID: 11400000, guid: ca58c0bc711cba149bcbc881aabeeac1, type: 2}
-  playerInventory: {fileID: 11400000, guid: f422c3e3e1797464288eb0ba481fbcb9, type: 2}
   isOpen: 0
   playerInrange: 0
-  dialogWindow: {fileID: 0}
-  diaLogText: {fileID: 0}
+  item: {fileID: 4222636678442505133, guid: f3fdf22b9a4864f40b5c64f4e38166d5, type: 3}
 --- !u!95 &1779415842128032060
 Animator:
   serializedVersion: 4

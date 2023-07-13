@@ -171,7 +171,6 @@ MonoBehaviour:
   thrust: 2
   knockTime: 0
   damage: 3
-  textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
 --- !u!114 &1703141558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +185,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   effect: {fileID: 4501651294761526583, guid: 2b2f14a4395c047458aee2a4039b4178, type: 3}
+  timeStop: 0.6

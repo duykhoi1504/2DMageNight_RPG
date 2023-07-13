@@ -70,7 +70,6 @@ MonoBehaviour:
   _playerData: {fileID: 11400000, guid: 630a641f3969cd043b6b554965da8a5a, type: 2}
   amoutCoin: 200
   _inventory: {fileID: 11400000, guid: f422c3e3e1797464288eb0ba481fbcb9, type: 2}
-  coinText: {fileID: 0}
 --- !u!212 &4222636678442505134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110,7 +109,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1816196715
-  m_SortingLayer: 16
+  m_SortingLayer: 17
   m_SortingOrder: 0
   m_Sprite: {fileID: -882549839, guid: 39c38099d07a54d42939ea4e97ae20e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

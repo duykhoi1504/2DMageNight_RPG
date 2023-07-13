@@ -30,6 +30,7 @@ public class PhysicalInventoryItem : PowerUp
         {
             AudioManager.Instant.PLaySFX(CONSTANT.loop);
 
+            TextPoupManger.Instant.gameObject.GetComponent<TextPoupManger>().getTextPoupPositive(other.gameObject, 1, Color.green);
 
             AddItemToInventory();
             Destroy(this.gameObject);

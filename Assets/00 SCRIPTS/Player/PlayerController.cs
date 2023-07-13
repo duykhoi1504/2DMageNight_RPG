@@ -72,7 +72,7 @@ public class PlayerController : Singleton<PlayerController>
     {
 
         //reload mana
-       
+        ReEnegy();
         //cách 1
         //rigi.velocity = new Vector2(
         //    Input.GetAxisRaw("Horizontal"),
@@ -99,7 +99,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             PlayerState = Player_State.Idle;
         }
-            ReEnegy();
+          
         
     }
 
@@ -113,11 +113,11 @@ public class PlayerController : Singleton<PlayerController>
     public void ReEnegy()
     {
         timeCount += Time.deltaTime;
-        if (timeCount > 2)
+        if (timeCount > 1)
         {
             if (mana < PlayerData.mana)
             {
-                mana += 1f;
+                mana += 2f;
                
             }
             timeCount = 0f;

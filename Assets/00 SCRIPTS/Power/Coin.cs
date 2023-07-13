@@ -11,7 +11,7 @@ public class Coin : PowerUp
    
     void Start()
     {
-        
+        amoutCoin = Random.Range(100, 200);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Coin : PowerUp
         if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
             AudioManager.Instant.PLaySFX(CONSTANT.coin);
-
+            TextPoupManger.Instant.gameObject.GetComponent<TextPoupManger>().getTextPoupPositive(collision.gameObject, amoutCoin, Color.yellow);
             _inventory.coin += amoutCoin;
       
 

@@ -28,6 +28,7 @@ public class Heart : PowerUp
 
             if (currentHealth == _playerData.Health) return;
             AudioManager.Instant.PLaySFX(CONSTANT.loop);
+            TextPoupManger.Instant.gameObject.GetComponent<TextPoupManger>().getTextPoupPositive(collision.gameObject, _amoutHeart, Color.red);
             PlayerController.Instant.health += _amoutHeart;
             this.gameObject.SetActive(false);
            

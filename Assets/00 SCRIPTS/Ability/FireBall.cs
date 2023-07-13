@@ -27,9 +27,11 @@ public class FireBall : AbilityBase
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         AudioManager.Instant.PLaySFX(CONSTANT.arrow);
 
-        GameObject fireball = Instantiate(bullet, parent.transform.position, Quaternion.identity);
+        //GameObject fireball = Instantiate(bullet, parent.transform.position, Quaternion.identity);
+        GameObject fireball=OPManager.Instant.gameObject.GetComponent<OPManager>().GetObject(bullet);
         fireball.transform.position = parent.transform.position;
         fireball.transform.rotation= rotation;
+        fireball.SetActive(true);
 
 
     }

@@ -59,6 +59,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 905cbee3360220e46905d6caaf2f98e0, type: 3}
   - name: BattleTheme
     clip: {fileID: 8300000, guid: 7a797cb798f25a14893c38676ec0aaa9, type: 3}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: c3519e147eb39da49a39993623666ca4, type: 3}
   sfxSounds:
   - name: click
     clip: {fileID: 8300000, guid: dc9f9fb93bd396a4e8b866e21cf7408b, type: 3}
@@ -82,6 +84,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d8afc77b1a41c94448c8a299474736c6, type: 3}
   - name: enemyHurt
     clip: {fileID: 8300000, guid: 80a643600cebfe240bfbc21265dad4ce, type: 3}
+  - name: loop
+    clip: {fileID: 8300000, guid: aa4165701c35b644695909c04463caac, type: 3}
+  - name: thunder
+    clip: {fileID: 8300000, guid: 7ad1ecf7d2614d842a88708b9483a1e6, type: 3}
   musicSource: {fileID: 8880994764970544418}
   sfxSource: {fileID: 8880994765210397352}
 --- !u!1 &8880994764970544477
