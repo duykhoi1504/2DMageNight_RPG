@@ -164,5 +164,3 @@ MonoBehaviour:
   thrust: 3
   knockTime: 0.2
   damage: 2
-  textPoup: {fileID: 4606351809684842095, guid: 6745556c03feb5841a08617a26db8192, type: 3}
-  _color: {r: 1, g: 1, b: 1, a: 1}
